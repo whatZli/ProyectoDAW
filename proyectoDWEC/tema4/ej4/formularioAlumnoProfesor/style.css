@@ -1,0 +1,83 @@
+body{
+  width:50%;
+  margin:auto;
+}
+.menu{
+  color:white;
+  background-color: #1976D2;
+  padding:10px;
+  margin-right: 20px;
+}
+form{
+    display: none;
+}
+#alumno,#profesor{
+  width:90%;
+  height:80vh;
+  background-color: #e8f2fc;
+}
+h2{
+    font-size: 18px;
+}
+label{
+  display:block;
+  width:90%;
+  margin-left:10px;
+}
+input{
+  display:block;
+  width:90%;
+  margin-left:15px;
+  margin:5px;
+}
+#ciclosGrupop,#ciclosGrupoa{
+    padding-bottom:10px;
+    background-color: #ccdef9;
+}
+#fila1,#botonAgregarAsignatura,#asignaturasAgregadas{
+    display:inline-block;
+    width:33%;
+}
+#botonAgregarAsignatura{
+    position:relative;
+    left:-50px;
+    top:-50px;
+}
+#fila1 select{
+    width:150px;
+    margin:0;
+    padding:0;
+}
+#selectAsignaturasAgregadas{
+    width:300px;
+}
+.asignaturas {
+    display:block;
+}
+.asignaturas input{
+    margin-left:0;
+    display:inline-block;
+    width:10px;
+}
+#lopd,#lopdp{
+    margin-left:0;
+    display:inline-block;
+    width:10px;
+    position: relative;
+    bottom:20px;
+    right: 0px;
+}
+#botonAgregarAsignatura{
+    width:100px;
+    text-align: center;
+}
+#enviar,#borrar,#enviarp,#borrarp{
+    width: 20%;
+    display:inline-block;
+}
+select{
+  display:block;
+  width:20%;
+  margin-left:25px;
+  margin:5px;
+}

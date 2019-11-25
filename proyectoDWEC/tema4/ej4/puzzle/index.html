@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Puzzle de 4 piezas</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head></head>
+<body id="fondo" onload="cargar()">
+  <h1 id="mensajeTitulo">Intenta resolver el puzzle (a la primera)</h1>
+  <div id="contenedorCogerPieza">
+    <div class="cogerPiezas" draggable="true"><img id="pieza1" src="https://1.bp.blogspot.com/-VKX4oqqt-5o/Xc8xQ5dO4TI/AAAAAAAAAEQ/DmS0gbQRFiMIJhGH2skh8SSPWIXgHk8TwCLcBGAsYHQ/s320/3.png" alt="">
+    </div>
+    
+    <div class="cogerPiezas" draggable="true"><img id="pieza2" src="https://1.bp.blogspot.com/-IInNcdnhZJA/Xc8xSsPqicI/AAAAAAAAAEU/vi9EBb-FbOYSf150HFUAgT6UhiHteSJ_ACLcBGAsYHQ/s320/1.png" alt=""></div>
+    
+    <div class="cogerPiezas" draggable="true"><img id="pieza3" src="https://1.bp.blogspot.com/-pywM0BfeFf0/Xc8xWwRBNZI/AAAAAAAAAEc/ye9h1G5Ez30R-t1TsmbRyrqzxI_eHoasQCLcBGAsYHQ/s320/4.png" alt=""></div>
+    
+    <div class="cogerPiezas" draggable="true"><img id="pieza4" src="https://1.bp.blogspot.com/-5zWDTe8dt-I/Xc8xVC-gWiI/AAAAAAAAAEY/wucialJh6Gk6OZUAIndggfDe25h6ZK5AwCLcBGAsYHQ/s320/2.png" alt=""></div>
+  </div>
+  <div id="contenedorResultado">
+    <div id="resultadoPieza1" class="resultadoPiezas" ></div>
+    <div id="resultadoPieza2" class="resultadoPiezas" ></div>
+    <div id="resultadoPieza3" class="resultadoPiezas" ></div>
+    <div id="resultadoPieza4" class="resultadoPiezas" ></div>
+  </div>
+  <div>
+    <h2 id="mensajeResuelto">Enhorabuena, has logrado resolverlo</h2>
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

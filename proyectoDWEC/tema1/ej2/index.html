@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="noticias" content="noticias locales nacionales e internacionales"/>
+		<meta name="author" content="Alex Dominguez Dominguez"/>
+		<meta name="Keywods" content="noticias, locales, nacionales, internacionales"/>
+		<meta name="generator" content="notepad++"/>
+		<meta name="robots" content="index, follow">
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+		<link href="css/reset.css"   rel="stylesheet"         type="text/css" >
+		<title>html01 Alex Dominguez</title>
+		<link href="css/estilo.css"  rel="stylesheet"         type="text/css" title="Default style">
+	</head>
+	<body>
+		<h1>Matricula del curso</h1>
+		<nav>
+			<li>Home</li>
+			<li>Oferta Educativa</li>	
+			<li>Tutorias</li>	
+			<li>Horarios</li>	
+			<li>Contacto</li>	
+		</nav>
+		
+		<a href="http://ieslossauces.centros.educa.jcyl.es/sitio/"><img src="download.jpg" alt="Instituto"/></a>
+		
+		<form action="prueba.php" method="get">
+			<fieldset>
+				<legend>Datos personales</legend>
+					<label>Nombre: </br></label><input type="text" name="nombre" maxlength="5" value="Escriba el nombre"></br>
+					<label>Apellidos: </br></label><input type="text" name="apellidos" value="Escriba el apellido"></br>
+					<label>Correo electrónico: </br></label><input type="text" name="email" value="Escriba el email"></br>
+					<label>Fecha de nacimiento: </br></label><input type="text" name="email" value="dd/mm/aaaa"></br>
+			</fieldset>
+			<fieldset>
+				<legend>Matrícula</legend>
+				
+					<label>¿De qué te matriculas?</label></br>
+					<input type="radio"/><label>1º Curso</label></br>
+					<input type="radio"/><label>2º Curso</label></br>
+			</fieldset>
+			<br>
+			<input type="button" value="Aceptar"/>
+		</form>
+
+		<table border="1" rules=all>
+			<tr>
+				<td>Curso</td>
+				<td>Asignaturas</td>
+			</tr>
+			<tr>
+				<td>1º Curso</td>
+				<td>
+					<li>Redes Locales</li>
+					<li>Sistemas Operativos</li>
+					<li>Aplicaciones Web</li>
+					<li>Ofimática</li>
+					<li>FOL</li>
+				</td>
+			</tr>
+			<tr>
+				<td>2º Curso</td>
+				<td>
+					<li>Montaje y mantenimiento</li>
+					<li>Sistemas Operativos en Red</li>
+					<li>Servicios</li>
+					<li>Seguridad</li>
+					<li>Empresa</li>
+				</td>
+			</tr>
+		</table>
+		<footer>
+			<p>Si pulsas en la imagen te lleva a la web del centro</p>
+			<address>
+				Contacto del centro: <br></br> Av: Federico Silva,48, 49600, Zamora
+			</address>
+		</footer>
+	</body>
+</html>
+

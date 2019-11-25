@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var num= new Number (15654665456);
+            
+            //Saber tipo de objeto
+            console.log(typeof(num));
+            
+            //Minimo y máximo que pueden almacenar
+            console.log(Number.MIN_VALUE);
+            console.log(Number.MAX_VALUE);
+            
+            //Pasar a notación exponencial
+            console.log(num.toExponential());
+            
+            //Formatear con 2 decimales
+            console.log(num.toFixed(2));
+            
+            //Pasar a string
+            console.log(num.toString());
+            
+            //Comparar Clase Number con un número
+            if(num.valueOf()===15.65){
+                console.log("Es igual");
+            }else{
+                console.log("Es distinto");
+            }
+            console.log(typeof(num.valueOf()));
+            
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

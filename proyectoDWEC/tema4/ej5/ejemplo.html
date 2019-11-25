@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js.js"></script>
+        <style>
+            #caja1{
+                width: 80px;
+                height: 40px;
+                background-color: greenyellow;
+            }
+        </style>
+    </head>
+    <body onload="cargar()">
+        <h1>Eventos</h1>
+        <h2>Eventos en línea</h2>
+
+        <!--        En línea que se este incrustando al js en el html-->
+        <input type="button" id="boton" name="boton" value="Pulsar" onclick="alert('Has pulsado el botón')">
+        <input type="button" id="boton2" name="boton2" value="Pulsar2" onclick="clickme()">
+        <div id="caja1" onclick="contenedor()">Soy un botón</div>
+        <div id="caja2" ondblclick="cambiarColor()">Cambiar color</div>
+
+        <h2>Evento tradicional</h2>
+        <input type="button" id="boton3" name="boton3" value="Pulsar" >
+
+        <h2>Modelo de registro avanzado(addEventListener)</h2>
+        <input type="button" id="botonA" name="botonA" value="Pulsar" >
+        <input type="button" id="cambiarNombre" name="cambiarNombre" value="Pulsar para cambiar" >
+        <input type="button" id="borrar" name="borrar" value="Pulsar para borrar" >
+
+        <h2>Quién soy</h2>
+        <button id="1">1</button>
+        <button id="2">2</button>
+        <button id="3">3</button>
+        <button id="4">4</button>
+    </body>
+</html>

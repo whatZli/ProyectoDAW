@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Expresiones regulares</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //Mi primera expresion regular
+            var cadena = "EstA cadenA si va a ser una cadena larga para los ejemplos de cada una de las cadenas";
+            var exp = new RegExp("una","g");
+            console.log(cadena.search(exp));
+            
+            //Todas las posiciones en la que están y con qué coincide devuelve un Array
+            while(array = exp.exec(cadena)){
+                console.log(array);
+            }
+            console.log("Buscar lo que coincida con que empiece por cad");
+            //Buscar lo que coincida con cad que empiece
+            //  \s para decir que tiene que corresponder por un espacio
+            //   c caracter normal o cadena
+            //   . comodin opcional
+            exp =/\sc.?/g;//Algo que tenga un espacio y que comience por c y luego tenga algo
+            while(array = exp.exec(cadena)){
+                console.log(array);
+            }
+            console.log("Quiero que la cadena tenga c+3 letras");
+            exp = /\sc.{3}\s/g;
+            while(array = exp.exec(cadena)){
+                console.log(array);
+            }
+            
+            console.log("Buscar una palabra que no contengan la a");
+            exp = /a/g;
+            while(array = exp.exec(cadena)){
+                console.log(array);
+            }
+            aux = cadena.split(" ");
+            /*aux.forEach(function (item){
+               if(!item.match(text))){
+                  console.log(item);
+            });*/
+            
+            console.log("Comprobar que un IBAN es Español");
+            //ES15 ES48
+            exp = /ES[0-9]{2}/;
+            console.log(exp.test("ES21"));
+            
+            console.log("Elegir una opcion entre hombre y mujer");
+            //l
+            exp = /[hombre$|mujer$]/;
+            console.log(exp.test("hombre"));
+            
+            console.log("Comprobar si la cadena acaba en /");
+            exp = /\/$/;
+            console.log(exp.test('Frase de prueba /'));
+            
+            console.log("comprobar que empiece por a");
+            exp = /^a/;
+            console.log(exp.test("hola mundo"));
+            console.log(exp.test("algo"));
+            
+            console.log("Mayusculas y minusculas discriminando ");
+            exp = /[A]/gi;//
+            console.log(exp.test("hola"));
+            
+            console.log("Mayusculas y minusculas  ");
+            exp = /[A-z]/g;//
+            console.log(exp.test("hola"));
+            
+            console.log("Digitos y letras no sean numeros");
+            console.log( " \d digitos ");
+            console.log( " \D no digitos ");
+            console.log("Codigo sea primero 2 letras y 4 números");
+            exp = /\D{2}\d{4}/;
+            console.log(exp.test("ES6545"));
+            
+            //Grupos anónimos
+            console.log("Palabra que empiece por un patron y que la última sea ese mismo patrón");
+            exp = /(\D).*\1/;
+            console.log(exp.test("CadenaC"));
+            
+            console.log("Expresion que el nombre y los apellidos empiecen por la misma letra");
+            exp = /(^A).*\s\1/g;
+            console.log(exp.test("Alex Aasndas"));
+            
+            //Reemplazar cadena con replace
+            console.log(cadena.replace("a","@"));
+            
+            exp=/a/g;
+            console.log(cadena.replace(exp,"@"));
+            
+            exp=/[aA]/g;
+            console.log(cadena.replace(exp,function(caracter) {
+                if(caracter==="a"){
+                    return "@";
+                }
+                if(caracter==="A"){
+                    return "4";
+                }
+            }));
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

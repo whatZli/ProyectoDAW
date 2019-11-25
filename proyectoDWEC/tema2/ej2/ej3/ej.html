@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){ 
+                do{
+                    var num=prompt("Introduzca el numero");
+                    num=parseInt(num);
+                }while(isNaN(num));
+                var parrafo=document.getElementById("mostrar1"); 
+
+                for(var i=0; i<=10; i++){
+                    parrafo.innerHTML +=(num+"x"+i+"="+"\n\
+                    "+num*i+"</br>");
+                }
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Pide por pantalla un numero y muestra por 
+            pantalla la tabla de multiplicar de dicho numero
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

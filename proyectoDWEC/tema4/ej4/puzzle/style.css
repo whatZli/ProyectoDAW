@@ -1,0 +1,70 @@
+body{
+  width:80%;
+  margin:auto;
+  background: #B71C1C;
+}
+h1, h2{
+  width:100%;
+  text-align: center;
+  color:white;
+}
+h2{
+  visibility:hidden;
+}
+img{
+  width:200px;
+  height:200px;
+}
+p{
+  color:white;
+  font-size: 40px;
+  margin:40% 40%;
+}
+/*Cuadro de la izquierda*/
+#contenedorCogerPieza{
+  display:inline-block;
+  width:404px;
+  height:404px;
+  display:inline-block;
+}
+/*Fichas para coger del cuadro de la izquierda*/
+.cogerPiezas{
+  width:200px;
+  height:200px;
+  float:left;  
+  margin:1px;
+  background: #999;
+}
+#pieza1{
+  
+}
+#pieza2{
+  background-color: blue;
+}
+#pieza3{
+  background-color: green;
+}
+#pieza4{
+  background-color: orange;
+}
+
+
+/*Cuadro de la derecha*/
+#contenedorResultado{
+  float:right;
+  width:404px;
+  height:404px;
+  display:inline-block;
+}
+/*Fichas para colocar en el cuadro de la derecha*/
+.resultadoPiezas{
+  width:200px;
+  height:200px;
+  float:left;  
+  margin:1px;
+  background: #999;
+}
+#resultadoPieza1{}
+#resultadoPieza2{}
+#resultadoPieza3{}
+#resultadoPieza4{}

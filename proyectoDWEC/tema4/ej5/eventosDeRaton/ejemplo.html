@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Eventos de ratón</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js.js" type="text/javascript"></script>
+        <style>
+            div{
+                background-color: orange;
+                width: 250px;
+                height: 130px;
+                margin: 10px;
+            }
+            #coor{
+                background-color: grey;
+                width: 80%;
+                height: 100px;
+                margin: 10px;
+                color: white;
+                text-align: center;
+                padding-top: 75px;
+            }
+            #hijo{
+                width: 40%;
+                height: 50px;
+                background-color: purple;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        Haz doble click en la caja o botón derecho
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="coor"></div>
+
+        <div id="padre">
+            <div id="hijo"></div>
+        </div>
+        Elementos de teclado
+        Pulsa Control + espacio
+        <div id="teclado"></div>
+        Copia algo por ahí y pégalo
+        <textarea id="pegarTexto" rows="7" cols="50"></textarea>
+        <form>
+            <h1>Probar eventos en formularios</h1><br>
+            Fecha<input type="text" id="texto1" name="texto1" ><br>
+            Texto<input type="text" id="texto2" name="texto2" ><br>
+            Texto<input type="text" id="texto3" name="texto3" ><br>
+            Date<input type="date" id="date" name="date" ><br>
+            Email<input type="email" id="email" name="email" ><br>
+            <p id="parrafo">Parrafo</p>
+            Enviar<input type="submit" id="enviar" name="enviar" value="Enviar"><br>
+            Reset<input type="reset" id="reiniciar" name="reiniciar" value="Reiniciar">
+        </form>
+        <a href="https://www.google.com/" id="enlace">Google</a>
+        <br>
+        Mover parrafos entre cuadros
+        <div id="cuadro1"><p id="parrafoMover" draggable="true">Párrafo para arrastrar</p></div>
+        <div id="cuadro2"></div>
+        <div id="cuadro3"></div>
+
+        <br><br><br><br><br><br><br>
+    </body>
+</html>

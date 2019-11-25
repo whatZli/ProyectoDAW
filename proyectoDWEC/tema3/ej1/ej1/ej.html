@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays Tema3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1"); 
+                
+                var numElementos=prompt("Introduzca el número de elementos para introducir");
+                var elemento;
+                var miArray = new Array(numElementos);
+                for(var i=0;i<numElementos;i++){
+                    elemento=prompt("Introduzca el elemento "+(i+1));
+                    miArray[i];
+                    parrafo.innerHTML += elemento;
+                    if(i!==numElementos-1){
+                        parrafo.innerHTML += ',';
+                    }
+                }
+                console.log(miArray);
+            
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Arrays</h1>
+        <p>
+            Realiza un programa que pida por pantalla primero un número de elementos
+            y luego elementos para rellenar el array, posteriormente muestralo separados por comas
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

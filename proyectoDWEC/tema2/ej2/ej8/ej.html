@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 8</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                var valor,pago,vuelta;
+                const EURO2 = 2;
+                const EURO1 = 1;
+                const CENTS50 = 0.5;
+                const CENTS20 = 0.2;
+                const CENTS10 = 0.1;
+                const CENTS5 = 0.05;
+                const CENTS2 = 0.02;
+                const CENTS1 = 0.01;
+                
+                do{
+                   valor=prompt("Introduzca el valor del producto con 2 decimales");
+                   pago=prompt("Introduzca la cantidad con la que se va a pagar");
+                }while(parseFloat(pago)<parseFloat(valor) || isNaN(parseFloat(valor) || isNaN(parseFloat(pago))));
+                
+                parrafo.innerHTML += 'El producto vale -> '+valor+'€<br>';
+                parrafo.innerHTML += 'Se paga con -> '+pago+'€<br>';
+                
+                //Sacamos el valor total de la vuelta
+                vuelta=(pago-valor);
+                parrafo.innerHTML += 'La vuelta total es -> <strong>'+vuelta+'</strong>€<br><br><br>';
+                
+                var contMonedas=parseInt(contMonedas);//Cuenta las monedas que devuelve de cada tipo
+                //pone el contador a 0, 
+                //será siempre un valor entero que se irá incrementando de 1 en 1
+                contMonedas=0;
+
+                //Se divide el total de la vuelta entre la moneda que tenemos
+                contMonedas = parseInt(vuelta / EURO2);
+                //elegida. Luego se muestra cuantas monedas son necesarias
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 2€<br>';
+                //la vuelta es igual a el total de la vuelta menos las monedas nedesarias
+                //de 2 euros. Para que no saque decimales infinitos al ser float,
+                //ponemos el .toFixed(2)
+                vuelta = parseFloat(vuelta - contMonedas*EURO2).toFixed(2);
+                //ponemos el contador de monedas de nuevo a 0 para la siguiente moneda
+                contMonedas=0;
+                
+                contMonedas = parseInt(vuelta / EURO1);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 1€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*EURO1).toFixed(2);
+                contMonedas=0;
+
+                contMonedas = parseInt(vuelta / CENTS50);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 0.50€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*CENTS50).toFixed(2);
+                contMonedas=0;
+
+                contMonedas = parseInt(vuelta / CENTS20);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 0.20€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*CENTS20).toFixed(2);
+                contMonedas=0;
+
+                contMonedas = parseInt(vuelta / CENTS10);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 0.10€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*CENTS10).toFixed(2);
+                contMonedas=0;
+                
+                contMonedas = parseInt(vuelta / CENTS5);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 0.05€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*CENTS5).toFixed(2);
+                contMonedas=0;
+
+                contMonedas = parseInt(vuelta / CENTS2);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 0.02€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*CENTS2).toFixed(2);
+                contMonedas=0;
+
+                /**/
+                contMonedas = parseInt(vuelta / CENTS1);
+                parrafo.innerHTML += 'Se devuelven '+contMonedas+' monedas de 0.01€<br>';
+                vuelta = parseFloat(vuelta - contMonedas*CENTS1).toFixed(2);
+                contMonedas=0;
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Realiza un programa que le introduzca un valor de un producto con 2 decimales
+            y posteriormente un valor con el que pagar por encima (valor del producto 6.33€ y
+            ha pagado con 10€). Muestra el número mínimo de monedas con las que puedes devolver
+            el cambio
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

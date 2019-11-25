@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays Tema3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1"); 
+                
+                var dias = new Array("Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo");
+
+                var laborables= dias.slice(0,5);//Desde - hasta
+                var festivos= dias.slice(5,7);//Desde - hasta
+                
+                parrafo.innerHTML += "Los días laborables son: "+laborables+"<br>";
+                parrafo.innerHTML += "Los días festivos son: "+festivos+"<br>";
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Arrays</h1>
+        <p>
+            Escribe un programa que genere un array de Lunes a Domingo y después lo divida en dos, uno con los días laborales y otro con los festivos.
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

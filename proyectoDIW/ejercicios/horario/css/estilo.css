@@ -1,0 +1,19 @@
+*{}
+body{}
+table{
+	margin:auto;
+	text-align:center;
+}
+thead{
+	
+}
+tbody{
+	
+}
+td, th{
+	width:10%;
+	transition:0.5s;
+}
+td:hover, th:hover{
+	transform:scale(1.3);
+}

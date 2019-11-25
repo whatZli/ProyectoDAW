@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Alex Dominguez Dominguez"/>
+        <meta name="generator" content="notepad++"/>
+        <meta name="robots" content="index, follow">
+        <link rel="shortcut icon" type="image/png" href="../../../../core/images/favicon.png"/>
+        <title>Alex Dominguez</title>
+        <link href="../webroot/css/style.css"  rel="stylesheet" type="text/css" title="Default style">
+        <style>
+            form{
+                width: 50%;
+                margin: auto;
+            }
+            input{
+                margin: 10px;
+            }
+            #atras img{
+                position: fixed;
+                right: 10px;
+                bottom: 100px;
+                width: 100px;
+            }
+        </style>
+        <script type="text/javascript" src="js.js"></script>
+    </head>
+    <body onload="inicio()">
+        <div id="logo">
+            <a href="../../../"><h1>DAW</h1></a>
+        </div>
+        <div id="topBar"></div>
+        <div id="menu">
+            <a href="../../../proyectoDWES/index.html"><h1>DWES</h1></a>
+            <a href="../../../proyectoDWEC/index.html" >
+                <h1>DWEC</h1>
+            </a>
+            <a href="../../../proyectoDAW/index.html">
+                <h1>DAW</h1>
+            </a>
+            <a href="../../../proyectoDIW/index.html">
+                <h1>DIW</h1>
+            </a>
+        </div>
+
+        <div class="content" >
+            <form name="form" onsubmit="return valida()">
+                <fieldset>
+                    <legend>Plantilla de validación de formularios</legend>
+                    <label>Valores alfabéticos</label>
+                    <input type="text" name="tAlphabetic" id="tAlphabetic" placeholder="abcde"><br>
+                    <label>Valores alfanuméricos</label>
+                    <input type="text" name="tAlphanumeric" id="tAlphanumeric" placeholder="1234abcd"><br>
+                    <label>Valores numéricos enteros</label>
+                    <input type="text" name="tNumericInt" id="tNumericInt" placeholder="1234"><br>
+                    <label>Valores numéricos reales</label>
+                    <input type="text" name="tNumericFloat" id="tNumericFloat" placeholder="1234.45"><br>
+                    <label>Área de texto</label>
+                    <textarea rows="2" cols="30" name="taTextArea" id="taTextArea"></textarea><br>
+                    <label>Lista deplegable</label>
+                    <select name="sList" id="sLista">
+                        <option value="opcion1">Opcion 1</option>
+                        <option value="opcion2">Opcion 2</option>
+                        <option value="opcion3">Opcion 3</option>
+                    </select><br>
+                    <label>Fecha</label>
+                    <input type="date" name="dDate" id="dDate" value=""><br>
+                    <label>Color</label>
+                    <input type="color" name="cColor" id="cColor" value="#c3ec3e"><br>
+                    <label>Rango de valores</label>
+                    <input id="rango" list="milista" type="range" name="rango" min="0" max="100">
+                    <datalist id="milista">
+                        <option value="0">0</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                    </datalist><br>
+                    <label>Valores de tipo Radio</label>
+                    <input type="radio" id="rbRadio1" name="rbRadio" value="rbRadio1" checked>
+                    <label for="rbRadio1" >Opcion 1</label>
+                    <input type="radio" id="rbRadio2" name="rbRadio" value="rbRadio2">
+                    <label for="rbRadio2">Opcion 2</label>
+                    <input type="radio" id="rbRadio3" name="rbRadio" value="rbRadio3">
+                    <label for="rbRadio3">Opcion 3</label><br>
+                    <label>Valores de tipo CheckBox</label>
+                    <input type="checkbox" id="cbCheckBox1" name="cbCheckBox1[opcion1]" value="cbCheckBox1">
+                    <label for="cbCheckBox1">Opcion 1</label>
+                    <input type="checkbox" id="cbCheckBox2" name="cbCheckBox2[opcion2]" value="cbCheckBox2">
+                    <label for="cbCheckBox2">Opcion 2</label>
+                    <input type="checkbox" id="cbCheckBox3" name="cbCheckBox3[opcion3]" value="cbCheckBox3">
+                    <label for="cbCheckBox3">Opcion 3</label><br>
+
+                    <input type="submit" name="enviar" value="Enviar">
+                </fieldset>
+            </form>   
+        </div>
+        <a href="../">
+            <div id="atras">
+                <img src="images/atras.png" alt=""/>
+            </div>
+        </a>
+        <a href="../../../"><footer>
+                <address>
+                    &copy2019 Alex Dominguez
+                </address>
+            </footer></a>
+    </body>
+</html>

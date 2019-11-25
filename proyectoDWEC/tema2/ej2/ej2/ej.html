@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){ 
+                 var num1=prompt("Introduzca numero 1");
+                 var num2=prompt("Introduzca numero 2");
+                 var num3=prompt("Introduzca numero 3");
+                 
+                 var iguales=parseInt(iguales);
+                 var distintos=parseInt(distintos);
+                 
+                 var parrafo=document.getElementById("mostrar1"); 
+                 
+                 iguales=0;
+                 distintos=3;
+                 
+                 if(num1===num2){
+                    if(iguales===0){
+                         iguales++;
+                     }
+                     if(distintos===3){
+                         distintos--;
+                     }
+                     iguales++;
+                     distintos--;
+                 } if(num2===num3){
+                     if(iguales===0){
+                         iguales++;
+                     }
+                     if(distintos===3){
+                         distintos--;
+                     }
+                     iguales++;
+                     distintos--;
+                 } if(num1===num3){
+                     if(iguales===0){
+                         iguales++;
+                     }
+                     if(distintos===3){
+                         distintos--;
+                     }
+                     iguales++;
+                     distintos--;
+                 }
+                 
+                 parrafo.innerHTML=("Iguales->"+iguales+"</br>\n\
+                 Distintos->"+distintos);
+                 
+             }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Escribe un programa que pida 3 numeros y que escriba si son
+            los tres iguales, si hay 2 iguales o si son los 3 distintos
+        </p>
+        <p id="mostrar1">
+            
+        </p>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Departamentos>
+  <Departamento>
+    <CodDepartamento>AAA</CodDepartamento>
+    <DescDepartamento>Descripción AAA</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>BBB</CodDepartamento>
+    <DescDepartamento>Descripción BBB</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>CCC</CodDepartamento>
+    <DescDepartamento>ccccccc</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DOS</CodDepartamento>
+    <DescDepartamento>dosdosdos</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DT1</CodDepartamento>
+    <DescDepartamento>Departamento Administracion</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DT2</CodDepartamento>
+    <DescDepartamento>Departamento Ventas</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DT3</CodDepartamento>
+    <DescDepartamento>Departamento Contabilidad</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DT4</CodDepartamento>
+    <DescDepartamento>Departamento Directivo</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>MMM</CodDepartamento>
+    <DescDepartamento>mmmmmmm</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>NNN</CodDepartamento>
+    <DescDepartamento>nnnnn</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>VVV</CodDepartamento>
+    <DescDepartamento>vvv</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>XXX</CodDepartamento>
+    <DescDepartamento>zzzzz</DescDepartamento>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>ZZZ</CodDepartamento>
+    <DescDepartamento>zzzzz</DescDepartamento>
+  </Departamento>
+</Departamentos>

@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+
+body{
+	background-color:#F7F7F7;
+	font-family: 'Varela Round', sans-serif;
+	width:90%;
+	margin:auto;
+	
+	text-align:center;
+	padding-top:3%;
+	animation: animarFondo 5s ease;
+	
+}
+#logo{
+	color:white;
+	position:fixed;
+	left:25%;
+	top:10px;
+	z-index:27;
+}
+#logo:hover {
+	color:#F7F7F7;
+}
+img{
+	border-radius: 5px;
+}
+#topBar{
+	position:fixed;
+	background-color:#3B5998;
+	top:0%;
+	left:0%;
+	right:0%;
+	height:60px;
+}
+#menu{
+	position:fixed;
+	top:15px;
+	left:20%;
+	right:5%;
+	width:auto;
+	z-index:21;
+	font-size: 1.2em;
+}
+#menu a{
+	display:inline-block;
+	margin-right:40px;
+	color:white;
+	font-size: 13px;
+}
+
+#menu a:hover{
+	color:#F7F7F7;
+}
+ #logo a {
+	 text-decoration:none;
+	color:white;}
+ #menu a {
+	 text-decoration:none;
+	color:white;}
+
+.portada{
+	position:fixed;
+	bottom:25%;
+	left:5%;
+	right:5%;
+	z-index:11;
+}
+#fondo img{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+}
+
+#hora{
+	position:fixed;
+	top:80px;
+	right:20px;
+	color:grey;
+	font-size:18px;
+}
+
+#contador{
+	position:fixed;
+	top:80px;
+	left:20px;
+	color:grey;
+	font-size:18px;
+}
+
+table{
+	display:inline-block;
+	text-align: center;
+	border:0px solid ;
+	color:black;
+	padding:30px;
+	position:relative;
+	top:00px;
+	animation: animarTablas 1s ease;
+	transition:0.4s;
+
+	opacity:1;
+	background-color:white;
+	/* border-radius:0%; */
+    /* transition:border-radius 2s ease,height 2s ease; */
+	
+}
+table:hover{
+	filter:contrast(200%);
+}
+
+table img{
+	width:200px;
+	margin:auto;
+	transition:0.2s;
+}
+table tr td{
+	font-weight: bold;
+}
+td{
+	width:125px;
+	position:relative;
+	top:-20px;
+	
+}
+/*         TITULOS                 */
+.title {
+	font-family: "Montserrat";
+	text-align: center;
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 40vh;
+	letter-spacing: 1px;
+}
+.title h1 {
+	text-transform: uppercase;
+	font-size: 120px;
+	line-height: 1.25;
+	margin: 10px 0;
+}
+.title h2{
+	opacity:0.7;
+}
+.title h3{
+	opacity:0.2;
+	margin-top:1.5%;
+}
+
+footer{
+	padding:10px;
+	text-align: center;
+	max-height:34px;
+	position:fixed;
+	left: 0;
+	right:0;
+	bottom:0;
+	font-size: 13px;
+	font-family: 'Indie Flower', cursive;
+	background-color:#3B5998;
+	z-index:0;
+}
+address{
+	color:white;
+}
+
+@media (max-width: 1475px) {
+    a h1{
+		font-size: 1.7em;
+		padding-left:0;
+		padding-right:0;
+    }
+	.content{
+		margin-top:60px;
+		margin-bottom:160px;
+	}
+	.portada{
+		position:fixed;
+		bottom:10%;
+		transition:0.2s;
+	}
+	#menu{
+		position:fixed;
+		top:15px;
+		left:20%;
+		right:0%;
+		width:auto;
+		text-align:right;
+		z-index:2;
+	}
+	table img{
+		width:150px;
+		margin:auto;
+		transition:0.2s;
+	}
+}	
+@media (max-width: 650px) {
+  a h1{
+    font-size: 1.4em;
+	padding-left:0;
+	padding-right:0;
+  }
+	.content{
+		margin-left:5%;
+		margin-right:5%;
+	}
+	.portada{
+		position:fixed;
+		bottom:10%;
+		transition:0.2s;
+	}
+	td{
+		padding-bottom:10px;
+	}
+	table img{
+		width:100px;
+		margin:auto;
+		transition:0.2s;
+	}
+	#logo{
+		color:white;
+		position:fixed;
+		left:5%;
+		top:15px;
+		z-index:27;
+	}
+	#menu{
+		position:fixed;
+		top:15px;
+		left:0%;
+		right:0%;
+		width:auto;
+		text-align:right;
+		z-index:2;
+		
+	}
+}

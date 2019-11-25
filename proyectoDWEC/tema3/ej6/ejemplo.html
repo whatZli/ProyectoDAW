@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="misFunciones.js"></script>
+        <script>
+            //Función normal
+            function suma(v1,v2){
+                return v1+v2;
+            }
+            console.log(suma(4,5));
+            //Definir función como una variable
+            var sumar= function suma(a,b){
+                return a+b;
+            }
+            console.log(sumar(1,2));
+            //Ver función tal cual
+            console.log(suma);
+            //Función anónima. Se utilizan cuando las necesitamos
+            //en el mismo momento que las declaramos
+            var sumaAnon= function (a,b){
+                return a+b;
+            }
+            console.log(sumaAnon(1,2));
+            //Argumentos de la función
+            function resta(v1,v2,v3,v4){
+                //Nos muestra los parámentros que han sido recibidos
+                console.log(arguments.length);
+                //Nos muestra el Array de argumentos
+                console.log(arguments);
+                return v1+v2;
+            }
+            console.log("El número de argumentos es "+resta.length);
+            console.log("El nombre de la funcion es "+resta.name);
+            console.log(resta(1,2));
+            
+            //Argumentos paso por valor
+            //Significa que los valores pasados por parametros a una función
+            //no modificarán su valor fuera de la función (Variables sin objeto)
+            var a=5;
+            function incremento(a){
+                a++;
+                return a;
+            }
+            console.log("Variable inicial -> "+a);
+            console.log("Salida de la función incremento -> "+incremento(a));
+            
+            //Argumentos paso por referencia
+            //Significa que los valores pasados por parametros hacen referencia
+            //al parametro por lo que, lo que cambie dentro de la función cambiará fuera
+            //(Arrays y variables en objeto)
+            var a = new Array(5,6);
+            function poner1(a){
+                a[0]=1;
+                a[1]=1;
+            }
+            console.log("Array antes de llamar a la funcion -> "+a);
+            poner1(a);
+            console.log("Array después de llamar a la funcion -> "+a);
+            
+            //Vamos a pasar una cadena
+            var cadena="Alex";
+            function modCadena(cadena){
+                cadena="Hola"+cadena;
+            }
+            console.log("Cadena antes de llamar a la funcion -> "+cadena);
+            modCadena(cadena);
+            console.log("Cadena después de llamar a la funcion -> "+cadena);
+            
+            //Pasar por parametro un objeto
+            var proyector = new Object();
+            proyector.lente="cristal";
+            proyector.marca="Acer";
+            function setMarca(proyector,marca){
+                proyector.marca=marca;
+            }
+            console.log("La marca antes de modificar es -> "+proyector.marca);
+            setMarca(proyector,"Fujitsu");
+            console.log("La marca antes de modificar es -> "+proyector.marca);
+            
+            //Funciones anidadas
+            //Declaración una función dentro de una función
+            function hola(nombre){
+                var saludo = nombre;
+                function saludar(holas){
+                    return holas+nombre;
+                }
+                if(nombre=="Alex"){
+                    return saludar("Hola ");
+                }else{
+                    return saludar("Buenos días ");
+                }    
+            }
+            console.log(hola("Maria"));
+            console.log(hola("Alex"));
+            
+            //Funciones closure
+            function empleado(cargo,salario){
+                this.cargo=cargo;
+                this.salario=salario;
+                this.aumento=function(porcentaje){
+                    this.salario=salario*(1+porcentaje);
+                    return this.salario;
+                }
+            }
+            var emp=new empleado("informatica",1000);
+            emp.aumento(0.10);
+            console.log(emp);
+            
+            //Funciones clusure sin objetos
+            //Funcion que depende de otra función
+            //Para una función que se repite muchas veces pero con diferentes parametros
+            function crearBase(x){
+                return function(y){
+                    return Math.pow(x,y);
+                }
+            }
+            var b6=crearBase(6);
+            console.log(b6(2));
+            
+            //Funciones flecha=>emmet
+            //Sirven para abreviar la creación de funciones
+            //=>(quitar el nombre funcion, el return y los corchetes)
+            var s = function suma(x,y){
+                return x+y;
+            }
+            var sa=(x,y)=>x+y;            
+            
+            console.log(sa(2,5));
+            
+            //Llamar a un archivo externo
+            console.log(donde());//Es necesario poner la etiqueta <script> con la ruta a el otro archivo
+        </script>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

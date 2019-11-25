@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){ 
+                 var edad1=prompt("Introduzca la edad 1");
+                 var edad2=prompt("Introduzca la edad 2");
+                 var parrafo=document.getElementById("mostrar1"); 
+                 
+                 if(edad1>edad2){
+                     parrafo.innerHTML=("La edad 1 es mayor");
+                 }else if(edad2>edad1){
+                     parrafo.innerHTML=("La edad 2 es mayor");
+                 }else{
+                     parrafo.innerHTML=("Las edades son iguales");
+                 }
+             }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Pide por pantalla 2 edades y muestra quién es la mayor
+        </p>
+        <p id="mostrar1">
+            
+        </p>
+    </body>
+</html>

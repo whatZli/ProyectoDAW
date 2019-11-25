@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                var sueldo,antiguedad,salario;
+                
+                do{
+                   sueldo=prompt("Introduzca el sueldo del trabajador");
+                   antiguedad=prompt("Introduzca la antiguedad del trabajador");
+                }while(isNaN(parseInt(sueldo)) || isNaN(parseInt(antiguedad)));
+                parrafo.innerHTML += 'Se ha introducido -> '+sueldo+'€ de sueldo<br><br>';
+                parrafo.innerHTML += 'Se ha introducido -> '+antiguedad+' años de antigüedad<br><br>';
+                
+                if(sueldo<500 && antiguedad>10){
+                    salario=sueldo*3;
+                }else if(sueldo<500 && antiguedad<10){
+                    salario=sueldo*2;
+                }else if(sueldo>=500){
+                    salario=sueldo;
+                }
+                
+                parrafo.innerHTML += 'El salario final es <strong>-> '+salario+'</strong><br><br>';
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            De un trabajador se obtiene por teclado una línea con su sueldo y en otra
+            línea los años de antigüedad.<br>
+            Se pide un programa que lea los datos de entrada e informe:<br>
+            a) Si el sueldo es inferior a 500 y su antigüedad es igual o superior a 10
+            años, triplicar el sueldo<br>
+            b) Si el sueldo es inferior a 500 pero su antigüedad es menor a 10 años, doblar sueldo<br>
+            c) Si el sueldo es mayor o igual a 500 mostrar sin cambios<br>
+            <br>
+            Mostrar el salario final<br>
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

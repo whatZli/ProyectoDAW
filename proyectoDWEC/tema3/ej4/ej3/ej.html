@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+
+            function funcion1() {
+                var parrafo = document.getElementById("mostrar");
+                var valido = false;
+                var partes = new Array();
+                var fecha = "", dia = 0, mes = 0, anio = 0;
+                var fActual = new Date();
+                
+
+                do {
+                    fecha = prompt("Introduzca la fecha de nacimiento en formato dd/mm/aaaa");
+
+                    if (fecha.length >= 8 && fecha.length <= 10) {
+                        partes = fecha.split("/");
+                        dia = parseInt(partes[0]);
+                        mes = parseInt(partes[1]);
+                        anio = parseInt(partes[2]);
+                        console.log();
+                        if (isNaN(dia) || isNaN(mes) || isNaN(anio)) {
+                            alert("Error en la fecha. Introduzca la fecha en el formato dd/mm/aaaa");
+                        } else {
+                            if (anio > 1900 && anio < fActual.getFullYear()) {
+                                if(mes>0 && mes <13){
+                                    if(dia>0 && dia<32){
+                                        valido = true;
+                                        parrafo.innerHTML += "La fecha introducida es " + dia + "/" + mes + "/" + anio + "<br>";
+                                    }else{
+                                        alert("El dia no es válido");
+                                    }
+                                }else{
+                                    alert("El mes no es válido");
+                                }
+                            } else {
+                                alert("El año no es válido");
+                            }
+                        }
+                    } else {
+                        alert("Formato de fecha no válido");
+                    }
+                } while (!valido);
+                var fNueva = new Date(anio,mes-1,dia);
+                var fActual = new Date();
+                var fDiferencia = new Date(fActual.getTime()-fNueva.getTime());
+                anio=Math.floor(fDiferencia.getTime()/1000/60/60/24/365);
+                mes=Math.floor(fDiferencia.getTime()/1000/60/60/24%365/30.42);
+                dias=Math.floor(fDiferencia.getTime()/1000/60/60/24%365%30.42);
+                parrafo.innerHTML += "Han pasado "+anio+" años<br>";
+                parrafo.innerHTML += "Han pasado "+mes+" mes<br>";
+                parrafo.innerHTML += "Han pasado "+dias+" dias<br>";
+                console.log(fNueva.getTime());
+                console.log(fActual.getTime());
+        }
+        </script>
+    </head>
+    <body onload="funcion1()">
+        <h1>Pedir fecha de nacimiento y calcular el tiempo que ha pasado</h1>
+        <p id="mostrar"></p>
+    </body>
+</html>

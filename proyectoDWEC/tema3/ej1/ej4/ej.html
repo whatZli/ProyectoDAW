@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays Tema3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1"); 
+                
+                var elementos = new Array(2,5,9,7,6,3,1,5,4,8,3,2,6,9,3,5,1,2,3);
+                parrafo.innerHTML += "El array antiguo es: "+(elementos)+"<br>";
+                
+                //Recorrer con map
+                //Se declara un nuevo array
+                //El item es el contenido de los elementos
+                //El index es el indice de los elementos
+                var nuevo = elementos.map(function(item,index){
+                    //Si el contenido del elemento es = a 3
+                    //Devuelve en el array nuevo el indice de elementos
+                    if(item===3){
+                        return index;
+                    //Si el contenido del elemento es != a 3
+                    //Devuelve en el array nuevo el item que habia antes
+                    }else{
+                        return item;
+                    }
+                });
+                
+                parrafo.innerHTML += "El array nuevo es: "+(nuevo)+"<br>";
+                console.log(nuevo);
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Arrays</h1>
+        <p>
+            Escribe un programa que dado un array devuelva la posición donde haya el valor 3 y cambie el valor por el número de la posición ([2,5,9,7,6,3,1,5,4,8,3,2,6,9,3,5,1,2,3])
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

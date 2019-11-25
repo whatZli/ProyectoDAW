@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays Tema3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var tabla=document.getElementById("mostrar1"); 
+                var posicion;
+                var palabra;
+                var array = new Array(10);
+                var cont=0;
+                do{
+                    posicion=prompt("Introduzca una posición");
+                    posicion++;
+                    if(array[posicion]===undefined){
+                        palabra="";
+                        do{
+                            palabra=prompt("Introduzca una palabra");
+                        }while(palabra==="");
+                        array[posicion]=palabra;
+                        cont++;
+                    }else{
+                        alert("Posición no válida");
+                    }
+                    
+                }while(cont<10);
+                
+                array.forEach(recorre);
+                    function recorre(item,index){
+                        tabla.innerHTML +="<tr><td>" + index + "</td><td>"+ item +"</td></tr>";
+                    };
+                }   
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Arrays</h1>
+        <p>
+            Escribe un programa que pida una posición y una palabra, introduce la palabra en la posición dada, el programa no acabará hasta rellenar 10 posiciones, el usuario no tiene por qué saber que en programación se empieza en el 0, responderá a posiciones de 1 a 10 aunque use 0-9. Si el usuario intenta introducir una palabra en una posición que ya está ocupada le saldrá un error, diciéndole que ya ha rellenado ese elemento. Cuando haya escrito todos los elementos, muestra todos los elementos.
+        </p>
+        <table border="1" id="mostrar1">
+            <caption>
+                Array final
+            </caption>
+            <tr>
+                <td>Posición</td>
+                <td>Valor</td>
+            </tr>
+        </table>
+    </body>
+</html>

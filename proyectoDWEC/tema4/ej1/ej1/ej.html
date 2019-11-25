@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Alex Dominguez Dominguez"/>
+        <meta name="generator" content="notepad++"/>
+        <meta name="robots" content="index, follow">
+        <link rel="shortcut icon" type="image/png" href="../../../../core/images/favicon.png"/>
+        <title>Alex Dominguez</title>
+        <link href="../webroot/css/style.css"  rel="stylesheet" type="text/css" title="Default style">
+        <script type="text/javascript" src="js/ej.js"></script>
+    </head>
+    <body onload="verFormulario()">
+        <div id="logo">
+		<a href="../../../../"><h1>DAW</h1></a>
+	</div>
+	<div id="topBar"></div>
+	<div id="menu">
+		<a href="../../../../proyectoDWES/index.html"><h1>DWES</h1></a>
+		<a href="../../../../proyectoDWEC/index.html" >
+			<h1>DWEC</h1>
+		</a>
+		<a href="../../../../proyectoDAW/index.html">
+			<h1>DAW</h1>
+		</a>
+		<a href="../../../../proyectoDIW/index.html">
+			<h1>DIW</h1>
+		</a>
+	</div>
+        
+        <div class="content" >
+        <h1>Formulario de Contacto</h1>
+        <form action="valido.html" accept-charset="utf-8" 
+              name="form" id="form" enctype="application/x-www-form-urlencoded"
+              target="_blank" onsubmit="return validar()">
+            <fieldset>
+                <legend>Formulario de contacto</legend>
+                <label for="nombre">Introduzca Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Introduce Nombre"/><br>
+                <label for="apellidos">Introduzca Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Introduzca apellidos"/><br>
+                <label for="dni">Introduzca DNI</label>
+                <input type="text" id="dni" name="dni" placeholder="Introduzca DNI"/><br>
+                <label for="email">Introduzca Email</label>
+                <input type="text" id="email" name="email" placeholder="Introduzca Email"/><br>
+                <label for="ciudad">Introduzca Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Introduzca Ciudad"/><br>
+                <label for="pais">Introduzca Pais</label>
+                <input type="text" id="pais" name="pais" placeholder="Introduzca Pais"/><br>
+                    
+                <input type="reset" name="reset"/>
+                <input type="submit" name="enviar"/>
+            </fieldset>
+        </form>
+        </div>
+        <a href="ej8"><div id="atras">
+            <img src="../images/atras.png" alt=""/>
+        </div></a>
+        <a href="../../../../"><footer>
+            <address>
+                &copy2019 Alex Dominguez
+            </address>
+        </footer></a>
+    </body>
+</html>

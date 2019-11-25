@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                
+                var radio=prompt("Introduzca el radio de la circunferencia");
+                var diametro=radio*2;
+                var area= 2*(Math.PI*radio);
+                
+                parrafo.innerHTML += "El radio introducido es "+radio;
+                parrafo.innerHTML += "<br>El área del círculo es "+diametro;
+                parrafo.innerHTML += "<br>El área del círculo es "+area.toFixed(2);   
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Math y Number</h1>
+        <p>
+            Realiza un programa que pida por pantalla el valor del radio de una circunferencia y muestre el diámetro y el área
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>
+
+</html>

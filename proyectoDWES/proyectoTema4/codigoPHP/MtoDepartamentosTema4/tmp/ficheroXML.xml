@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Departamentos>
+  <Departamento>
+    <CodDepartamento>123</CodDepartamento>
+    <DescDepartamento>Descripción 123</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>234</CodDepartamento>
+    <DescDepartamento>Descripción 234</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>AAA</CodDepartamento>
+    <DescDepartamento>Descripción AAAA</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>3</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>ASD</CodDepartamento>
+    <DescDepartamento>Descripción ASD</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>BBB</CodDepartamento>
+    <DescDepartamento>Descripción BBB</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>CCC</CodDepartamento>
+    <DescDepartamento>Descripción CCC</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>DDD</CodDepartamento>
+    <DescDepartamento>Descripción DDD</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>EEE</CodDepartamento>
+    <DescDepartamento>Descripción EEE</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>FFF</CodDepartamento>
+    <DescDepartamento>Descripción FFF</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>FRE</CodDepartamento>
+    <DescDepartamento>Descripción FRE</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>GGG</CodDepartamento>
+    <DescDepartamento>Descripción GGG</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>HHH</CodDepartamento>
+    <DescDepartamento>Descripción HHH</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>III</CodDepartamento>
+    <DescDepartamento>Descripción III</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>JJJ</CodDepartamento>
+    <DescDepartamento>Descripción JJJ</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>KKK</CodDepartamento>
+    <DescDepartamento>Descripción KKK</DescDepartamento>
+    <FechaBaja>2019-11-24</FechaBaja>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>LLL</CodDepartamento>
+    <DescDepartamento>Descripción LLL</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>MMM</CodDepartamento>
+    <DescDepartamento>Descripción MMM</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>XXX</CodDepartamento>
+    <DescDepartamento>Descripción XXX</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+  <Departamento>
+    <CodDepartamento>ZZZ</CodDepartamento>
+    <DescDepartamento>Descripción ZZZ</DescDepartamento>
+    <FechaBaja/>
+    <VolumenNegocio>1</VolumenNegocio>
+  </Departamento>
+</Departamentos>

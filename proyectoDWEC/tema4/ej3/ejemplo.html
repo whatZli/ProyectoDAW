@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="select.js" type="text/javascript"></script>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <form name="form" onsubmit="return valida()">
+            <h1>Input de tipo select</h1>
+            <select name="select" id="select">
+            <option value="ninguno">Seleccione una opción</option>
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miercoles">Miercoles</option>
+            <option value="jueves">Jueves</option>
+            <option value="viernes">Viernes</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+        </select>
+            <br><br><br><input type="submit" name="enviar" value="Enviar">
+        </form>
+        
+        <form name="form2" onsubmit="form2">
+            <h1>Rellenar cuando le des a enviar al primer formulario</h1>
+            <select name="select2" id="select2">
+                
+            </select>
+            <br><br><br><input type="submit" name="enviar2" value="Enviar2">
+        </form>
+        
+        <form action="#" name="form3" onsubmit="return validaFichero()">
+            <h1>Envío de ficheros</h1>
+            <input type="file" multiple name="fichero"/>
+            <br><br><br><input type="submit" name="enviar3" value="Enviar">
+        </form>
+    </body>
+</html>

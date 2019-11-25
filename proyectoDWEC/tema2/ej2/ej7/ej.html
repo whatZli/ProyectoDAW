@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                var num;
+                do{
+                   num=prompt("Introduzca un número de 3 cifras");
+                }while(num<100 || num>999 || isNaN(parseInt(num)));
+                parrafo.innerHTML += 'Se ha introducido el número -> '+num+'<br><br>';
+                
+                var cadena=num.toString();
+                
+                var cifra1,cifra2,cifra3;
+                parrafo.innerHTML += 'La cadena es-> '+cadena+'<br>';
+                cifra1=cadena.substring(0,1);
+                cifra2=cadena.substring(1,2);
+                cifra3=cadena.substring(2,3);
+                
+                parrafo.innerHTML += 'La cifra 1 es -> '+cifra1+'<br>';
+                parrafo.innerHTML += 'La cifra 2 es -> '+cifra2+'<br>';
+                parrafo.innerHTML += 'La cifra 3 es -> '+cifra3+'<br>';
+                
+                if((parseInt(cifra1)**3)+(parseInt(cifra2)**3)+(parseInt(cifra3)**3)===parseInt(num)){
+                    parrafo.innerHTML += num+' Es un número Armstrong';
+                }else{
+                    parrafo.innerHTML += num+' No es un número Armstrong<br>';
+                }
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Realiza un programa que dado un numero de 3 cifras, averigue 
+            si es un numero Armstrong (La suma de cada uno de los numeros 
+            que lo componen elevado al numero de digitos de dicho numero
+            da como resultado el propio numero)
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

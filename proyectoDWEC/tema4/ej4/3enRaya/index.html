@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>A Pen by  ale_xD_ominguez</title>
+        <script  src="script.js"></script>
+        <style>
+            body{
+                margin:0 0;
+                text-align: center;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            table{
+                float:left;
+                width:50%;
+            }
+            td{
+                font-weight: 1000;
+                font-size: 90px;
+                width: 16vw;
+                height: 22vh;
+            }
+            table + table{
+                margin-left:250px;
+                margin-top:200px;
+            }
+            caption{
+                font-size: 12vh;
+            }
+
+            div table{
+                margin:25% 25%;
+            }
+            div table tr:nth-child(2) th{
+                font-size: 3vh;
+            }
+            th{
+                font-size: 2vh;
+            }
+            #fondoMarcador{
+                float:left;
+                right:0;
+                background-color:#ffe6ff;
+                width:50%;
+                height:67.6vh;
+                float:right;
+                z-index: -1;
+            }
+            #fondoOpciones{
+                float:left;
+                width:100%;
+                height:23vh;
+            }
+        </style>
+    </head>
+    <body onload="cargar()">
+        <h1>Tres en raya</h1>
+        <table>
+            <tr>
+                <td id="1" >-</td>
+                <td id="2" >-</td>
+                <td id="3" >-</td>
+            </tr>
+            <tr>
+                <td id="4" >-</td>
+                <td id="5" >-</td>
+                <td id="6" >-</td>
+            </tr>
+            <tr>
+                <td id="7" >-</td>
+                <td id="8" >-</td>
+                <td id="9" >-</td>
+            </tr>
+        </table>
+        <div id="fondoMarcador">
+            <table>
+                <caption>Marcador</caption>
+                <tr>
+                    <th>Partidas Jugadas</th>
+                    <th>Jugador 1</th>
+                    <th>Jugador 2</th>
+                </tr>
+                <tr>
+                    <th id="partidasJugadas">0</th>
+                    <th id="marcador1">0</th>
+                    <th id="marcador2">0</th>
+                </tr>
+            </table>
+        </div>
+        <div id="fondoOpciones">
+            <h2>Editar plantilla</h2>
+            Color de las casillas ➵ 
+            <input id="colorFondoCasillas" type="color" value="#4D1A57">
+            Color del Jugador 1 ➵ 
+            <input id="colorJugador1" type="color" value="#f35fdd">
+            Color del Jugador 2 ➵ 
+            <input id="colorJugador2" type="color" value="#eef318">
+            Color de las casillas vacías ➵ 
+            <input id="colorCasillasVacias" type="color" value="#ffffff">
+            <br>
+            <div>Anotaciones
+                <ul>
+                    <li>La primera partida la empieza el jugador 1</li>
+                    <li>Las siguientes partidas empezará el perdedor de la partida anterior</li>
+                    <li>Si se da doble click sobre la última casilla marcada, se eliminará la ficha y el jugador seguirá con el turno para modificar su movimiento</li>
+                    <li>Se pueden cambiar todos los colores en cualquier momento de la partida</li>
+                </ul>
+            </div>
+        </div>
+    </body>

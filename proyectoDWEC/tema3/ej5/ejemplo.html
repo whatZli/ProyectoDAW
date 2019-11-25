@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //definimos el objeto con la palabra reservada Object
+            var miObjeto = new Object();
+            console.log(miObjeto);
+            miObjeto.nombre = "Maria";
+            miObjeto.edad = 20;
+             console.log(miObjeto);
+             
+             
+            //Basado en tipo personalizado
+            function Persona(nombre,edad){
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+            
+            var personita = new Persona("Pedro",22);
+            console.log(personita);
+            
+            //Declaracion literal
+            var person = {
+                nombre: "Alex",
+                edad: 22
+            }
+            console.log(person);
+            
+            //Acceder a las propiedades de los objetos
+            console.log(miObjeto.nombre);
+            console.log(miObjeto["nombre"]);
+            
+            
+            //Declarar metodos
+            var miObjeto = new Object();
+            miObjeto.nombre = "Maria";
+            miObjeto.edad = 20;
+            //metodo mostrar
+            miObjeto.mostrar = function(){
+                console.log("El objeto con constructor new tiene como nombre: "+ this.nombre+" y edad:" + this.edad);
+            }
+            
+            miObjeto.cumpleanos = function(){
+                this.edad++;
+            }
+            
+            miObjeto.mostrar();
+            miObjeto.cumpleanos();
+            miObjeto.mostrar();
+            
+             //Basado en tipo personalizado
+            function Persona(nombre,edad){
+                this.nombre = nombre;
+                this.edad = edad;
+                
+                this.mostrar = function(){
+                    console.log("El objeto como funcion tiene como nombre: "+ this.nombre+" y edad:" + this.edad);      
+                };
+            }
+            
+            var personita = new Persona("Pedro",22);
+            personita.mostrar();
+            
+            //incluimos métodos
+            //Declaracion literal
+            var person = {
+                nombre: "Alex",
+                edad: 22,
+                mostrar: function(){
+                    console.log("El objeto literal tiene como nombre: "+ this.nombre+" y edad:" + this.edad);      
+                }
+            }
+            person.mostrar();
+            
+            console.log(Object.getOwnPropertyNames(person));
+            
+            // Modificar los objetos con prototype
+            var padre = new Persona("Pepe",50);
+            console.log(padre);
+            console.log(Object.getOwnPropertyNames(padre));
+            Persona.prototype.trabaja;
+            padre.trabaja = "bombero";
+            console.log(padre);
+            console.log(Object.getOwnPropertyNames(padre));
+            
+            
+            //Hijo
+            var hijo = new Persona("David",25);
+            Persona.prototype.estudia;
+            hijo.estudia = "Informática";
+            console.log(hijo);
+            
+            delete hijo.estudia;
+            console.log(hijo);
+            
+            //CLASES
+            class Boli{
+                constructor(color,grosor,marca){
+                    this.color = color;
+                    this.grosor = grosor;
+                    this.marca = marca;
+                }
+                
+                static bolisvendidos(color){
+                    return Math.floor(Math.random()*100);
+                }
+            };
+            
+            var boli = new Boli("azul",12,"bic");
+            console.log(boli);
+            console.log(boli instanceof Boli);
+            
+            //clases anónimas
+            var lapiz = class {
+                constructor(color,grosor,marca){
+                    this.color = color;
+                    this.grosor = grosor;
+                    this.marca = marca;
+                }
+            };
+            
+            console.log(new lapiz("azul",10,"alpino"));
+            
+            //LLamada a metodo estático
+            var bolisvendidos = Boli.bolisvendidos();
+            console.log(bolisvendidos);
+            
+            class Validacion{
+                static numero(n){
+                    if(isNaN(n))
+                        return false;
+                    else 
+                        return true;
+                }
+            }
+            
+            console.log(Validacion.numero(10357456));
+            
+            // Herencia en JavaScript
+            // Persona que tenga nombre y edad
+            // Y un empleado puede ser empleado o jefe
+            // extends
+            class Trabajador{
+                constructor(nombre,edad){
+                    this.nombre=nombre,
+                    this.edad=edad
+                }
+                
+                cunpleanios(){
+                    this.edad++;
+                }
+            }
+            var trabajador = new Trabajador("Alex",24);
+            console.log(trabajador);
+            trabajador.cunpleanios();
+            console.log(trabajador);
+            
+            class Empleado extends Trabajador{
+                constructor(nombre,edad,departamento,salario){
+                    super(nombre,edad);
+                    this.departamento=departamento,
+                    this.salario=salario;   
+                }
+            }
+            class Jefe extends Trabajador{
+                constructor(nombre,edad,departamento,salario,antiguedad){
+                    super(nombre,edad);
+                    this.departamento=departamento;
+                    this.salario=salario;
+                    for(var i=0;i<antiguedad;i++){
+                        this.salario*=1.01;
+                    }
+                    this.antiguedad=antiguedad;
+                }
+                sumaAnt(){
+                    this.antiguedad++;
+                    this.salario = this.salario*=1.01;
+                }
+            }
+            
+            var empleado1 = new Empleado("AlexEmpleado",24,"Repuestos",800);
+            var empleado2 = new Jefe("AlexJefe",24,"Ventas",1000,5);
+            console.log(empleado1);
+            console.log(empleado2);
+            empleado2.sumaAnt();//llamar a un método
+            console.log(empleado2);
+            
+            
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

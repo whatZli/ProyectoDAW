@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                var valores = new Array (7);
+                var aux;
+                for(var i=0;i<6;i++){
+                    do{
+                        aux=Math.round(Math.random()*50);
+                    }while(valores.indexOf(aux)>=0); 
+                    valores[i]=aux;
+                }
+                valores.sort();
+                valores[6]=Math.round(Math.random()*9);
+
+
+                console.log(valores);
+                parrafo.innerHTML += "Los números generados son "+valores.slice(0,6);
+                parrafo.innerHTML += "<br>El número de serie es  "+valores.slice(6);
+            }
+            
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Math y Number</h1>
+        <p>
+            Realiza un programa que genere los números correspondientes a la 
+            bonoloto, 6 valores entre 1-50, que no se repitan, y 1 del 1-9
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>
+
+</html>

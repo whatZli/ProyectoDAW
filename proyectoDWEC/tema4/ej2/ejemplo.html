@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js.js"></script>
+    </head>
+    <body onload="ver()">
+        <h1>Formularios de Check</h1>
+        <form name="formAlex" onsubmit="validar()">
+            <fieldset>
+                <legend>Selecciona las asignaturas</legend>
+                <input type="checkbox" id="dwec" name="dwec" value="dwec">
+                <label for="dwec" >DWEC</label>
+                <input type="checkbox" id="daw" name="daw" value="daw">
+                <label for="daw" >DAW</label>
+                <input type="checkbox" id="diw" name="diw" value="diw">
+                <label for="diw" >DIW</label>
+                <input type="checkbox" id="dwes" name="dwes" value="dwes">
+                <label for="dwes" >DWES</label>
+                <br><input type="submit" name="enviar"> 
+            </fieldset>
+        </form>
+        <form name="formAlex2" onsubmit="checkPorDefecto()">
+            <fieldset>
+                <legend>Selecciona las asignaturas</legend>
+                <input type="checkbox" id="dwec" name="dwec" value="dwec">
+                <label for="dwec" >DWEC</label>
+                <input type="checkbox" id="daw" name="daw" value="daw">
+                <label for="daw" >DAW</label>
+                <input type="checkbox" id="diw" name="diw" value="diw">
+                <label for="diw" >DIW</label>
+                <input type="checkbox" id="dwes" name="dwes" value="dwes">
+                <label for="dwes" >DWES</label>
+                <br><input type="submit" name="enviar"> 
+            </fieldset>
+        </form>
+        <h1>Formularios de RadioButton</h1>
+        <form name="formAlex3" onsubmit="validarRadio()">
+            <fieldset>
+                <legend>Selecciona tu profesor preferido</legend>
+                <input type="radio" id="maria" name="profesor" value="maria">
+                <label for="maria" >Maria</label>
+                <input type="radio" id="heraclio" name="profesor" value="heraclio">
+                <label for="heraclio" >Heraclio</label>
+                <input type="radio" id="amor" name="profesor" value="amor">
+                <label for="amor" >Amor</label>
+                <input type="radio" id="antonio" name="profesor" value="antonio">
+                <label for="antonio" >Antonio</label>
+                <br><input type="submit" name="enviar"> 
+            </fieldset>
+        </form>
+        
+    </body>
+</html>

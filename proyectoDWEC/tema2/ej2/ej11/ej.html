@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var numMayor,numMenor,acertado,noAcertado,contador;
+                
+                contador=1;
+                numMayor=parseInt(100);
+                numMenor=parseInt(1);
+                
+                alert("El juego ha comenzado!\nPiensa un número de 1-100");
+                acertado=confirm("¿Tu número es el "+parseInt((numMayor+numMenor)/2)+"? ");
+                
+                while(!acertado){
+                    noAcertado=confirm("¿El número es mayor que "+parseInt((numMayor+numMenor)/2)+"(Aceptar) o menor(Cancelar)");
+                    if(noAcertado){
+                        numMenor=parseInt((numMayor+numMenor)/2);
+                    }else{
+                        numMayor=parseInt((numMayor+numMenor)/2);
+                    }
+                    contador++;
+                    acertado=confirm("¿Tu número es el "+parseInt((numMayor+numMenor)/2)+"? ");
+                }
+                
+                alert("El número de intentos es "+contador);
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Realiza un programa que sea el juego de adivina el número(1-100).
+            Utiliza el elemento confirm para decir si has acertado o no. Si la respuesta
+            es no utiliza un segundo confirm para decirle si el número que has pensado
+            es mayor(aceptar) o menor(cancelar). Por ejemplo: Has pensado el 35, el programa
+            te va a decir el 45. En el primer confirm vas a decirle no y en el segundo le dirías
+            cancelar. Volverá a decirte otro número.<br>
+            a) Cuando lo acierte, muestra el número de intentos que ha necesitado
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

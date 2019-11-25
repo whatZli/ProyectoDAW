@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays Tema3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1"); 
+                
+                var elementos = new Array(2,5,9,7,6,3,1,5,4,8,3,2,6,9,3,5,1,2,3);
+                elementos.sort();
+                parrafo.innerHTML += "El Array Ordenado es: "+elementos+"<br>";
+                console.log(elementos);
+                
+                for(var i=0;i<elementos.length;i++){
+                    if(elementos[i]===elementos[i+1]){
+                        elementos.splice(i,1);//desde donde borro hasta las posición
+                        i--;
+                    }
+                }
+                
+                console.log(elementos);            
+                parrafo.innerHTML += "El Array Sin números repetidos es: "+elementos;
+            }   
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Arrays</h1>
+        <p>
+            Escribe un programa que dado un array ordénalo y devuelve otro array sin que haya elementos repartidos. ([2,5,9,7,6,3,1,5,4,8,3,2,6,9,3,5,1,2,3])
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

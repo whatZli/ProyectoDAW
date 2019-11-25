@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                
+                var a=prompt("Introduzca el valor de la a");
+                var b=prompt("Introduzca el valor de la b");
+                var c=prompt("Introduzca el valor de la c");
+                
+                a=parseInt(a);
+                b=parseInt(b);
+                c=parseInt(c);
+                
+                var resultado1=(-b-(Math.sqrt((Math.pow(b,2)-(4*a*c)))))/(2*a);
+                var resultado2=(-b+(Math.sqrt((Math.pow(b,2)-(4*a*c)))))/(2*a);
+                
+                if(isNaN(resultado1) || isNaN(resultado2)){
+                    parrafo.innerHTML += "Sin solución real";
+                }else{
+                    parrafo.innerHTML += "El resultado 1 es "+resultado1.toFixed(6);
+                    parrafo.innerHTML += "<br>El resultado 2 es "+resultado2.toFixed(6);
+                }
+                
+            }
+            
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Math y Number</h1>
+        <p>
+            Realiza un programa que resuelva ecuaciones de segundo grado, pidiendo a,b,c
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>
+
+</html>

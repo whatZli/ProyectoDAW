@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Alex Dominguez Dominguez"/>
+        <meta name="generator" content="notepad++"/>
+        <meta name="robots" content="index, follow">
+        <link rel="shortcut icon" type="image/png" href="../../images/favicon.png"/>
+        <link href="css/reset.css"   rel="stylesheet" type="text/css" >
+        <title>Alex Dominguez</title>
+        <link href="../webroot/css/style.css"  rel="stylesheet" type="text/css" title="Default style">
+        <script type="text/javascript" src="js/ej.js"></script>
+    </head>
+    <body >
+        <div id="logo">
+		<a href="../../../../"><h1>DAW</h1></a>
+	</div>
+	<div id="topBar"></div>
+	<div id="menu">
+		<a href="../../../../proyectoDWES/index.html"><h1>DWES</h1></a>
+		<a href="../../../../proyectoDWEC/index.html" >
+			<h1>DWEC</h1>
+		</a>
+		<a href="../../../../proyectoDAW/index.html">
+			<h1>DAW</h1>
+		</a>
+		<a href="../../../../proyectoDIW/index.html">
+			<h1>DIW</h1>
+		</a>
+	</div>
+        
+        <div class="content">
+        <h1>Expresiones</h1>
+        <h3> Explica paso a paso que hace la siguiente expresión regular <br>/[^<]+|<(\/?)([A-Za-z]+)>/g</h3>
+        <pre id='mostrar1' style="text-align: left;">
+            "/"         Comienzo de la expresión<br>
+            "[^<]"      Grupo de caracteres negativo. No puede contener el símbolo "<"<br>
+            "+"         Busca el caracter precedente 1 o más veces<br>
+            "|<"        Caracteres que aparecen en la cadena<br>
+            (\/?)       ? Busca el caracter anterior(/). La búsqueda es recordada ya que va entre ()<br>
+            ([A-Za-z]+) Grupo anónimo que busca que un caracter alfanúmerico aparezca 1 o más veces<br>
+            ">"         Caracter que tiene que aparecer en la cadena<br>
+            "/"         Fin de la expresión<br>
+            "g"         Busqueda global en toda la cadena<br>
+        </pre>
+    </div>
+        <a href="ej8"><div id="atras">
+            <img src="../images/atras.png" alt=""/>
+        </div></a>
+        <a href="../../../../"><footer>
+            <address>
+                &copy2019 Alex Dominguez
+            </address>
+        </footer></a>
+    </body>
+</html>
+</html>

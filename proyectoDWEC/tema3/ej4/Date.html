@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+           
+           // Fecha actual
+           var fecha = new Date();
+           console.log(fecha);
+           
+           // Fecha epoch
+           fecha1 = new Date();
+           console.log(fecha1);
+           
+           //+ 1  año
+           fecha1 = new Date(365*24*60*60*1000);
+           console.log(fecha1);
+           
+           //Cumpleaños de Nacho
+           fecha2 = new Date(1996,10,26);//Los meses empiezan desde el 0 <-------
+           console.log(fecha2);
+           
+           fecha2 = new Date(1996,10,26,05,45,32);//Los meses empiezan desde el 0 <-------
+           console.log(fecha2);
+           
+           //Pasarle un string, Tiene que ser ese formato en concreto
+           fecha2 = new Date("Nov 26,1996 16:30:50");//Los meses empiezan desde el 0 <-------
+           console.log(fecha2);
+           
+           //Cambio de mes
+           fecha2.setMonth(11);//Empiezan en 0
+           console.log(fecha2);
+           
+           //Cambio de dia
+           fecha2.setDate(31);// Si el mes se queda sin días se acumulan al siguiente mes
+           console.log(fecha2);//Se puede utilizar para sumar días
+           
+           //Cambio de año
+           fecha2.setFullYear(2003);
+           console.log(fecha2);
+           
+           //Cambio de hora
+           fecha2.setHours(23);
+           fecha2.setMinutes(45);
+           fecha2.setSeconds(32);
+           console.log(fecha2);
+           
+           //Cambiar el valor de la fecha teniendo milis
+           fecha2.setTime(-5321321656565);
+           console.log(fecha2);
+           
+           //Obtener fecha
+           fecha = new Date();
+           console.log(fecha.getTime());
+           
+           //Dia de la semana empezando por 0 y empieza en domingo
+           console.log(fecha.getDay());
+           
+           //
+           var fecha1= new Date();
+           var fecha2= new Date(0);
+           console.log(fecha1.getFullYear()-fecha2.getFullYear()+" anios han pasado");
+           
+           fecha1= new Date();
+           fecha2= new Date(0);
+           fecha1=fecha1.getTime();
+           fecha2=fecha2.getTime();
+           
+           //console.log(Math.floor(dif(/1000/365/3600/24)));
+           
+           //Formatear Date.parse string a num
+           var milis = Date.parse("10-11-2019 11:41:02");
+           console.log(typeof(milis)+ milis);
+           
+           //Con letra
+           var milis = Date.parse("May 17,1801 14:50:59");
+           console.log(typeof(milis)+ milis);
+           
+           //Formas mostrar fechas
+           fecha= new Date();
+           console.log(fecha);
+           console.log(fecha.toString());
+           console.log(fecha.toLocaleString());
+           console.log(fecha.toLocaleDateString());
+           console.log(fecha.toTimeString());
+           console.log(fecha.toLocaleTimeString());
+           
+           //Fecha completa en formato español
+           var opciones = {
+               weekday: 'long', year: 'numeric', 
+               month:'long', day:'numeric',hour:'numeric' ,
+               minute:'numeric',second:'numeric'}
+           console.log(fecha.toLocaleString("es-ES", opciones));
+           
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora|Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora|Quicksand|Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lora|Quicksand|Saira+Stencil+One&display=swap');
+
+body{
+	width:90%;
+	text-align:center;
+	margin:auto;
+	font-family: 'Quicksand', sans-serif;
+}
+div{
+	width:30%;
+	color:white;
+	display:inline-block;
+}
+
+h1{
+	font-size:16px;
+	font-family: 'Quicksand', sans-serif;
+}
+#left {
+	background-color:red;
+	text-align:left;
+}
+#center {
+	background-color:green;
+}
+#right {
+	background-color:blue;
+	text-align:right;
+}
+
+#left:hover{
+	background-color:cyan;
+}
+#center:hover{
+	background-color:purple;
+}
+#right:hover{
+	background-color:yellow;
+}

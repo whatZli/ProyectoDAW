@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora|Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora|Quicksand|Saira+Stencil+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lora|Quicksand|Saira+Stencil+One&display=swap');
+
+body{
+	width:90%;
+	text-align:center;
+	margin:auto;
+	font-family: 'Quicksand', sans-serif;
+	background-color:#fff7e6;
+}
+h1{
+	border-bottom: 4px dotted black;
+	}
+nav li{
+	display:inline-block;
+	width:18%;
+	background-color:#e6a000;
+	color:white;
+	font-size:18px;
+	margin-bottom: 4%;
+	text-align:center;
+	height:30px;
+	}
+nav li:hover{
+	background-color:white;
+	color:#e6a000;
+
+}
+img{
+	display:inline-block;
+	text-align:left;
+}
+form{
+	display:inline-block;
+	background-color:#ffcbb3;
+	padding:20px;
+	border-radius: 25px;
+	text-align:left;
+}
+fieldset input{
+	color:grey;
+}
+table{
+	display:inline-block;
+	background-color:#e6a000;
+	text-align:left;
+	
+}
+td li{
+	margin-left:20px;
+	
+}
+footer p{
+	text-align:left;
+	font-size:13px;
+}
+footer address{
+	font-size:15px;
+}

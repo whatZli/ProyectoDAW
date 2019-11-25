@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrays Tema3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var tabla=document.getElementById("mostrar1"); 
+                posicion=prompt("Introduzca el tamaño de la matriz. Número > 2");
+                
+                
+                var array = new Array(parseInt(posicion));
+                for(var i=0;i<array.length;i++){
+                    array[i] = subArray = new Array (parseInt(posicion));
+                }
+                
+                for(var i=0;i<array.length;i++){
+                    for(var j=0;j<subArray.length;j++){
+                        if(i>0 && j>0){
+                            array[i][j]=array[i-1][j]+array[i][j-1];
+                        }else{
+                            array[i][j]=parseInt(1);
+                        }
+                    }
+                }
+                
+                array.forEach(recorre);
+                    function recorre(fila,columna){
+                        tabla.innerHTML +="<tr>";
+                            console.log(fila.length);
+                            tabla.innerHTML +="<td>"+ fila +"</td>";
+                        
+                        tabla.innerHTML +="</tr>";
+                    };
+                } 
+            
+  
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Arrays</h1>
+        <p>
+            Escribe un programa que pida una posición y una palabra, introduce la palabra en la posición dada, el programa no acabará hasta rellenar 10 posiciones, el usuario no tiene por qué saber que en programación se empieza en el 0, responderá a posiciones de 1 a 10 aunque use 0-9. Si el usuario intenta introducir una palabra en una posición que ya está ocupada le saldrá un error, diciéndole que ya ha rellenado ese elemento. Cuando haya escrito todos los elementos, muestra todos los elementos.
+        </p>
+        <table id="mostrar1" border="1" >
+           
+        </table>
+    </body>
+</html>

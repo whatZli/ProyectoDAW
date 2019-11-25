@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                var anio,bisiesto;
+                
+                do{
+                   anio=prompt("Introduzca el año");
+                }while(anio<0 || isNaN(parseInt(anio)));
+                parrafo.innerHTML += 'Se ha introducido el año -> '+anio+'<br><br>';
+                
+                bisiesto=false;
+                
+                if(anio%4===0){
+                    if(anio%400===0){
+                        bisiesto=true;
+                    }else if(!anio%100===0){
+                        bisiesto=false;
+                    }
+                }
+                
+                if(bisiesto){
+                    parrafo.innerHTML += anio+' Es bisiesto';
+                }else{
+                    parrafo.innerHTML += anio+' No es bisiesto<br>';
+                }
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Tipos de datos y bucles</h1>
+        <p>
+            Saber si es bisiesto o no
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>

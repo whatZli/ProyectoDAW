@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function empezarFuncion(){
+                var parrafo=document.getElementById("mostrar1");
+                
+                var c1=prompt("Introduzca el cateto 1");
+                var c2=prompt("Introduzca el cateto 2");
+                var hipotenusa=Math.sqrt(Math.exp(c1,2)+Math.exp(c2,2));
+                
+                parrafo.innerHTML += "La hipotenusa del triángulo es "+hipotenusa.toFixed(2);
+            }
+        </script>
+    </head>
+    <body onload="empezarFuncion()">
+        <h1>Math y Number</h1>
+        <p>
+            Realiza un programa que pida por pantalla el valor del radio de una circunferencia y muestre el diámetro y el área
+        </p>
+        <p id="mostrar1"></p>
+    </body>
+</html>
+
+</html>
