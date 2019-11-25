@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
 *{
 	margin:0px;
 	padding:0px;
@@ -65,7 +65,7 @@ img{
 
 .content{
 	margin-top:4%;
-	margin-left:15%;
+	margin-left:25%;
 	margin-bottom:100px;
 	z-index:14;
 	font-family: 'Montserrat';
@@ -89,6 +89,7 @@ table{
 	display:inline-block;
 	text-align: center;
 	width:250px;
+        height: 270px;
 	border:0px solid ;
 	transition-duration: 0.6s;
 	position:relative;
@@ -99,7 +100,7 @@ table:hover, table:focus , table:active {
 }
 table img{
 	border-radius: 50%;
-	width:250px;
+	width:220px;
 	margin:auto;
 	transition:0.8s;
 }
@@ -147,6 +148,8 @@ address{
 	.content{
 		margin-top:60px;
 		margin-bottom:160px;
+                margin-left: 10%;
+                margin-right: 10%;
 	}
 	#menu{
 	position:fixed;
@@ -163,10 +166,10 @@ address{
     font-size: 1.4em;
 	padding-left:0;
 	padding-right:0;
-  }
+        }
 	.content{
-	margin-left:5%;
-	margin-right:5%;
+	margin-left:2%;
+	margin-right:2%;
 	margin-bottom:100px;
 
 	}
@@ -180,7 +183,7 @@ address{
 	left:5%;
 	top:15px;
 	z-index:27;
-}
+        }
 	#menu{
 	position:fixed;
 	top:15px;
@@ -190,5 +193,5 @@ address{
 	text-align:right;
 	z-index:2;
 	
-}
+        }
 }
