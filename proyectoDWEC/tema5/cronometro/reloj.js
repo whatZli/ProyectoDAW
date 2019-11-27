@@ -1,56 +1,89 @@
 var intervalo, horasC, minutosC, segundosC, miliSegundosC;
+var gradosH,gradosM,gradosS,gradosMS;
 var horas, minutos, segundos;
+var agujaMiliSegundosC,agujaSegundosC,agujaMinutosC,agujaHorasC;
 
-
-
-function empezarCronometro() {
+function empezarCronometro() {   
+    horasC.style.color="#221F1F";
+    minutosC.style.color="#221F1F";
+    segundosC.style.color="#221F1F";
+    
     $ms = "00";
-    $s = "59";
+    $s = "50";
     $m = "59";
-    $h = "00";
-    horasC.innerHTML = $h+" :";
-    minutosC.innerHTML = $m+" :";
-    segundosC.innerHTML = $s+" :";
+    $h = "06";
+    $gradosS=0;
+    $gradosM=0;
+    $gradosH=0;
+    horasC.innerHTML = $h + " :";
+    minutosC.innerHTML = $m + " :";
+    segundosC.innerHTML = $s + " ";
     miliSegundosC.innerHTML = $ms;
+    
+    gradosH.innerHTML=$gradosH;
+    gradosM.innerHTML=$gradosM;
+    gradosS.innerHTML=$gradosS;
     intervalo = setInterval(function () {
         if ($ms === 100) {
-            if ($m === 60) {
-                $s=00;
-                $m=00;
-                $h++;
-                if ($h < 10) {
-                    horasC.innerHTML = "0" + $h+" :";
-                } else {
-                    horasC.innerHTML = $h+" :";
-                }
-            }
-            if ($s === 60) {
-                $s=00;
-                $m++;
-                if ($m < 10) {
-                    minutosC.innerHTML = "0" + $m+" :";
-                } else {
-                    minutosC.innerHTML = $m+" :";
-                }
-            }
-            
+            $ms = 00;
+            miliSegundosC.innerHTML = $ms;
             $s++;
             if ($s < 10) {
-                segundosC.innerHTML = "0" + $s+" :";
+                segundosC.innerHTML = "0" + $s + " ";
             } else {
-                segundosC.innerHTML = $s+" :";
+                segundosC.innerHTML = $s + " ";
             }
-            
-            $ms = 00;
+            gradosS.innerHTML=6*$s;
+            /*Cambiar agujas*/
+            agujaSegundosC.style.transform="rotate("+Math.round(6*$s)+"deg)";
+            agujaMinutosC.style.transform="rotate("+Math.round(6*$m)+"deg)";
+            agujaHorasC.style.transform="rotate("+Math.round(30*$h+0.5*$m)+"deg)";
+            if ($s === 60) {
+                $s = 0;
+                gradosS.innerHTML=6*$s;
+                segundosC.innerHTML = "0" + $s;
+                $m++;
+                gradosM.innerHTML=6*$m;
+                gradosH.innerHTML=(30*$h+0.5*$m);
+                if ($m < 10) {
+                    minutosC.innerHTML = "0" + $m + " :";
+                } else {
+                    minutosC.innerHTML = $m + " :";
+                }
+            }
+            if ($m === 60) {
+                $m = 0;
+                gradosM.innerHTML=6*$m;
+                minutosC.innerHTML = "0" + $m + " :";
+                $h++;
+                gradosH.innerHTML=(30*$h+0.5*$m);
+                if ($h < 10) {
+                    horasC.innerHTML = "0" + $h + " :";
+                } else {
+                    horasC.innerHTML = $h + " :";
+                }
+            }
         } else {
-
-            miliSegundosC.innerHTML = $ms;
+            if($ms<10){
+                miliSegundosC.innerHTML = "0"+$ms;
+            }else{
+                miliSegundosC.innerHTML = $ms;
+            }
+            //Es 3.6 porque hay que dividir el total de grados(360)
+            //entre el número de milisegundos(100)
+            //Cada segundo son 3.6 grados
+            gradosMS.innerHTML=Math.round(3.6*$ms);
+            agujaMiliSegundosC.style.transform="rotate("+Math.round(3.6*$ms)+"deg)";
             $ms++;
         }
     }, 10);
 }
 function pararCronometro() {
     clearInterval(intervalo);
+    horasC.style.color="#E50914";
+    minutosC.style.color="#E50914";
+    segundosC.style.color="#E50914";
+    
 }
 function actualizarHora() {
     var d = new Date();
@@ -72,20 +105,30 @@ function actualizarHora() {
     }
 }
 function cargar() {
-    /*Reloj*/
+    /*Reloj Digital*/
     horas = document.getElementById("horas");
     minutos = document.getElementById("minutos");
     segundos = document.getElementById("segundos");
     setInterval(actualizarHora, 1000);
-    /*Cornómetro*/
+    /*Cronómetro ----- Tiempo*/
     horasC = document.getElementById("horasC");
     minutosC = document.getElementById("minutosC");
     segundosC = document.getElementById("segundosC");
     miliSegundosC = document.getElementById("miliSegundosC");
     empezar = document.getElementById("start");
     parar = document.getElementById("stop");
-
+    /*Cronómetro ----- Controles*/
     empezar.addEventListener('click', empezarCronometro, false);
     parar.addEventListener('click', pararCronometro, false);
+    /*Cronómetro ----- grados*/
+    gradosH=document.getElementById("gradosH");
+    gradosM=document.getElementById("gradosM");
+    gradosS=document.getElementById("gradosS");
+    gradosMS=document.getElementById("gradosMS");
+    /*Relog Analógico Cronómetro*/
+    agujaSegundosC=document.getElementById("agujaSegundosC");
+    agujaMiliSegundosC=document.getElementById("agujaMiliSegundosC");
+    agujaMinutosC=document.getElementById("agujaMinutosC");
+    agujaHorasC=document.getElementById("agujaHorasC");
 }
 window.addEventListener('load', cargar, false);

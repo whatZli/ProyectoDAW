@@ -19,22 +19,16 @@ and open the template in the editor.
                 padding: 0;
                 margin: auto;
             }
-            #cronometro, #digital{
+            #cronometro, #digital, #analogicoA, #analogicoC{
                 float:left;
                 margin: 20px;
+                width: 400px;
+                height: 400px;
+                background-color: #F5F5F1;
             }
             h1{
                 text-align: center;
-            }
-            #cronometro{
-                width: 400px;
-                height: 400px;
-                background-color: #F5F5F1;
-            }
-            #digital{
-                width: 400px;
-                height: 400px;
-                background-color: #F5F5F1;
+                font-size: 25px;
             }
             #hora,horaC{
                 width: 400px;
@@ -50,6 +44,9 @@ and open the template in the editor.
                 padding-left: 20px;
                 color: #221F1F;
             }
+            #tiempoC{
+                margin-left: 25px;
+            }
             #tiempoC>*{
                 display: inline-block;
                 text-align: center;
@@ -58,12 +55,12 @@ and open the template in the editor.
                 padding-left: 20px;
                 color: #221F1F;
             }
-            #tiempo{
-                background-color: #F7F7F7;
-                width: 400px;
-                height: 150px;
-                margin: auto;
-                margin-top: 15px;
+            #miliSegundosC{
+                font-size: 25px;
+                opacity: 0.5;
+            }
+            #controles{
+                margin-top: 30px;
             }
             .controlCronometro{
                 display: inline-block;
@@ -73,15 +70,99 @@ and open the template in the editor.
                 margin: 25px;
                 color: #F5F5F1;
             }
+            .controlCronometro:hover{
+                background-color: #E50914;
+            }
+            #grados{
+                position: relative;
+                top: -20px;
+
+            }
+            #grados h3{
+                display: block;
+                text-align: center;
+                font-size: 15px;
+            }
+            #grados > *{
+                display: inline-block;
+                font-size: 25px;
+                padding-left: 15px;
+            }
+            #marcoA, #marcoC{
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                background: white;
+            }
+             img{
+                width: 400px;
+                border-radius: 50%;
+            }
+            .agujas{
+                width: 5px;
+                background: #221F1F;
+                margin: auto;
+                border-radius: 4px;
+                transform-origin: 50% 100%;/*Para cambiar el eje del que parte la rotación*/
+                transform: rotate(0deg);
+                border-radius: 30%;
+                z-index: 10;
+            }
+            #agujaMiliSegundosC{
+                position:relative;
+                bottom: 400px;
+                opacity: 0.1;
+                background-image: linear-gradient( #ff0033,#ffcccc,white);
+                width: 10px;
+                height: 200px;
+                z-index: 5;
+            }
+            #agujaSegundosC{
+                position:relative;
+                bottom: 200px;
+                opacity: 0.8;
+                width: 2px;
+                height: 160px;
+                z-index: 8;
+                transition: all 1s linear;
+            }
+            #agujaMinutosC{
+                position:relative;
+                bottom: 40px;
+                opacity: 0.8;
+                width: 5px;
+                height: 140px;
+                z-index: 9;
+                transition: all 3s linear;
+            }
+            #agujaHorasC{
+                position:relative;
+                bottom: -100px;
+                left: -1px;
+                opacity: 0.8;
+                width: 7px;
+                height: 100px;
+                background: #E50914;
+                z-index: 10;
+                transition: all 5s linear;
+            }
         </style>
     </head>
     <body>
         <div id="digital">
-            <h1>Reloj</h1>
+            <h1>Reloj Digital</h1>
             <div id="hora">
                 <div id="horas"></div>
                 <div id="minutos"></div>
                 <div id="segundos"></div>
+            </div>
+        </div>
+        <div id="analogicoA">
+            <div id="marcoA">
+                <div id="agujaHorasA"></div>
+                <div id="agujaMinutosA"></div>
+                <div id="agujaSegundosA"></div>
+                <div id="agujaMiliSegundosA"></div>
             </div>
         </div>
         <div id="cronometro">
@@ -96,7 +177,22 @@ and open the template in the editor.
                 <div id="start" class="controlCronometro">Empezar</div>
                 <div id="stop" class="controlCronometro">Parar</div>
             </div>
-            <div id="grados"></div>
+            <div id="grados">
+                <h3>Grados Agujas</h3>
+                <div id="gradosH">0</div>º Horas
+                <div id="gradosM">0</div>º Mins
+                <div id="gradosS">0</div>º Segs
+                <div id="gradosMS">0</div>º MiliSegs
+            </div>
+        </div>
+
+        <div id="analogicoC">
+            <div id="marcoC">
+                <div id="agujaHorasC" class="agujas"></div>
+                <div id="agujaMinutosC" class="agujas"></div>
+                <div id="agujaSegundosC" class="agujas"></div>
+                <div id="agujaMiliSegundosC" class="agujas"></div>
+            </div>
         </div>
     </body>
 </html>
