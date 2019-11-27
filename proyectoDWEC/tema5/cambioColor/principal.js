@@ -1,16 +1,16 @@
-var cuerpo = document.getElementById("body");
+var cuerpo;
 
 function cambiarFondo() {
     ventanaColores = open('colores.html', '_blank', 'width=300px,height=300px');
     setTimeout(function () {
         ventanaColores.postMessage('cambiarFondo', '*');
-    }, 100);
+    }, 1000);
 }
 function cambiarLetra() {
     ventanaColores = open('colores.html', '_blank', 'width=300px,height=300px');
     setTimeout(function () {
         ventanaColores.postMessage('cambiarLetras', '*');
-    }, 100);
+    }, 1000);
 }
 function recibirColor() {
     recibido = event.data;

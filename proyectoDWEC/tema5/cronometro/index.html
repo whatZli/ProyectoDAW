@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Alex Dominguez</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="reloj.js"></script>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                margin: auto;
+            }
+            #cronometro, #digital{
+                float:left;
+                margin: 20px;
+            }
+            h1{
+                text-align: center;
+            }
+            #cronometro{
+                width: 400px;
+                height: 400px;
+                background-color: #F5F5F1;
+            }
+            #digital{
+                width: 400px;
+                height: 400px;
+                background-color: #F5F5F1;
+            }
+            #hora,horaC{
+                width: 400px;
+                height: 150px;
+                margin: auto;
+                margin-top: 70px;
+            }
+            #hora > *{
+                display: inline-block;
+                text-align: center;
+                font-size: 80px;
+                padding-top: 30px;
+                padding-left: 20px;
+                color: #221F1F;
+            }
+            #tiempoC>*{
+                display: inline-block;
+                text-align: center;
+                font-size: 50px;
+                padding-top: 30px;
+                padding-left: 20px;
+                color: #221F1F;
+            }
+            #tiempo{
+                background-color: #F7F7F7;
+                width: 400px;
+                height: 150px;
+                margin: auto;
+                margin-top: 15px;
+            }
+            .controlCronometro{
+                display: inline-block;
+                font-size: 35px;
+                padding: 20px;
+                background-color: #221F1F;
+                margin: 25px;
+                color: #F5F5F1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="digital">
+            <h1>Reloj</h1>
+            <div id="hora">
+                <div id="horas"></div>
+                <div id="minutos"></div>
+                <div id="segundos"></div>
+            </div>
+        </div>
+        <div id="cronometro">
+            <h1>Cronómetro</h1>
+            <div id="tiempoC">
+                <div id="horasC"></div>
+                <div id="minutosC"></div>
+                <div id="segundosC"></div>
+                <div id="miliSegundosC"></div>
+            </div>
+            <div id="controles">
+                <div id="start" class="controlCronometro">Empezar</div>
+                <div id="stop" class="controlCronometro">Parar</div>
+            </div>
+            <div id="grados"></div>
+        </div>
+    </body>
+</html>
