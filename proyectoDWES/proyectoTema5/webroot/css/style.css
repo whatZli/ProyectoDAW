@@ -162,6 +162,9 @@ footer{
 address{
     color:white;
 }
+a, a:link, a:active{
+    color:white;
+}
 
 @media (max-width: 1475px) {
     a h1{
