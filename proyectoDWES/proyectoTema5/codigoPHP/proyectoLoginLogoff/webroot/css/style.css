@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+    margin:0px;
+    padding:0px;
+
+}
+
+body{
+    background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
+    font-family: 'Varela Round', sans-serif;
+    width:90%;
+    margin:auto;
+
+    text-align:center;
+    padding-top:3%;
+    animation: animarFondo 5s ease;
+
+}
+#logo{
+    color:white;
+    position:fixed;
+    left:25%;
+    top:10px;
+    z-index:90;
+}
+#logo:hover {
+    color:#F7F7F7;
+}
+
+#topBar{
+    position:fixed;
+    background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
+    top:0%;
+    left:0%;
+    right:0%;
+    height:60px;
+    z-index:0;
+    color: white;
+    font-size: 35px;
+}
+#menu{
+    position:fixed;
+    top:15px;
+    left:20%;
+    right:5%;
+    width:auto;
+    z-index:29;
+    font-size: 1.2em;
+}
+#menu a{
+    background-color:#3B5998;
+    display:inline-block;
+    margin-right:40px;
+    color:white;
+    font-size: 13px;
+    z-index:90;
+    text-decoration:none;
+    color:white;
+}
+
+#menu a:hover{
+    color:#F7F7F7;
+    z-index:90;
+}
+#logo a {
+    text-decoration:none;
+    color:white;
+    z-index:90;
+}
+
+/* -------------------------CONTENT ------------------*/
+.content{
+    margin-top:4%;
+    margin-left:15%;
+    margin-right:15%;
+    margin-bottom:100px;
+    z-index:14;
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+.content h1{
+    position:relative;
+}
+img{
+    border-radius: 5px;
+}
+span {
+    color: red;
+}
+#atras img{
+    position:fixed;
+    bottom: 5%;
+    right:1%;
+    width:120px;
+}
+
+/* -------------------------Tablas ------------------*/
+table{
+    width:95%;
+    border:1px white solid ;
+    transition-duration: 0.6s;
+    text-align:left;
+}
+table img{
+    border-radius: 20%;
+    width:55px;
+    margin:auto;
+    transition:0.8s;
+    z-index:4;
+}
+table tr td{
+    font-weight: bold;
+    border:1px white solid;
+}
+#encuesta:hover {
+    border:1px black solid;
+    background-color: #c8d3ea;
+}
+table tr:hover td{
+    border-top: 1px solid #3B5998;
+    border-bottom: 1px solid #3B5998;
+    background-color: #eee;
+}
+#encuesta tr td:hover{
+    color:white;
+    background-color: #6c89c6;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* ---------------------FORMULARIOS ------------------*/
+form{
+    text-align:left;
+}
+form div{
+    padding-top:10px;
+}
+form > input{
+    width:150px;
+    padding:3px;
+    margin-top:10px;
+}
+.error{
+    color:red;
+    display:inline-block;
+}
+
+/* ---------------------FOOTER ------------------*/
+footer{
+    padding:10px;
+    text-align: center;
+    max-height:34px;
+    position:fixed;
+    left: 0;
+    right:0;
+    bottom:0;
+    font-size: 13px;
+    font-family: 'Indie Flower', cursive;
+    background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
+    z-index:30;
+}
+address{
+    color:white;
+}
+a, a:link, a:active{
+    color:white;
+}
+footer img{
+    position: fixed;
+    right:40px;
+    bottom:10px;
+}
+
+@media (max-width: 1475px) {
+    a h1{
+        font-size: 1.7em;
+        padding-left:0;
+        padding-right:0;
+    }
+    .content{
+        margin-top:60px;
+        margin-bottom:160px;
+        margin-left:15%;
+        margin-right:15%;
+    }
+    #menu{
+        position:fixed;
+        top:15px;
+        left:20%;
+        right:0%;
+        width:auto;
+        text-align:right;
+        z-index:2;
+    }
+}
+@media (max-width: 650px) {
+    a h1{
+        font-size: 1.4em;
+        padding-left:0;
+        padding-right:0;
+    }
+    .content{
+        margin-left:5%;
+        margin-right:5%;
+        margin-bottom:100px;
+
+    }
+    td{
+        padding-bottom:10px;
+    }
+
+    #logo{
+        color:white;
+        position:fixed;
+        left:5%;
+        top:15px;
+        z-index:27;
+    }
+    #menu{
+        position:fixed;
+        top:15px;
+        left:0%;
+        right:0%;
+        width:auto;
+        text-align:right;
+        z-index:2;
+
+    }
+}

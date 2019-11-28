@@ -114,9 +114,9 @@ function actualizarHora() {
         segundos.innerHTML = d.getSeconds();
     }
 
-    agujaSegundosA.style.transform = "rotate(" + Math.round(6 * d.getSeconds()) + "deg)";
+    agujaSegundosA.style.transform = "rotate(" + Math.round(6 * d.getSeconds()+1) + "deg)";
     agujaMinutosA.style.transform = "rotate(" + Math.round(6 * d.getMinutes()) + "deg)";
-    agujaHorasA.style.transform = "rotate(" + Math.round(30 * d.getHours()) + 0.5 * d.getMinutes() + "deg)";
+    agujaHorasA.style.transform = "rotate(" + Math.round((30 * d.getHours()) + 0.5 * d.getMinutes()) + "deg)";
 }
 function cargar() {
     /*Reloj Digital*/

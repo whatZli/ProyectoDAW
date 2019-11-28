@@ -14,16 +14,3 @@ if (isset($_POST['detalle'])) {
     <input type="submit" name="salir" value="Salir">
     <input type="submit" name="detalle" value="Detalle">
 </form>
-<?php
-echo '<h3>Variable Session</h3>';
-echo '<h3>Variable Server</h3>';
-echo '<pre>';
-print_r($_SERVER);
-echo '</pre>';
-echo '<h3>Variable Server</h3>';
-echo "<pre style='text-align:left;'>";
-print_r($_SERVER) . '<br>';
-echo "</pre>";
-echo '<h3>Variable Cookies</h3>';
-print_r($_COOKIE);
-?>

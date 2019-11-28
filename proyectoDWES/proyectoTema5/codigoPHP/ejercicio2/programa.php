@@ -6,7 +6,8 @@
         header('Location: detalle.php');
     }
 ?>
-<h1>Has accedido a programa.php</h1>
+<h1>Hola <?php echo $_SERVER['PHP_AUTH_USER']; ?></h1>
+<h3>Has accedido a programa.php</h3>
 
 <p>Usuario: <?php echo $_SERVER['PHP_AUTH_USER']; ?></p>
 <p>Password: <?php echo $_SERVER['PHP_AUTH_PW']; ?></p>
