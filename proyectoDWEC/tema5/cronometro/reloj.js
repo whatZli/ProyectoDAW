@@ -1,9 +1,15 @@
 var intervalo, horasC, minutosC, segundosC, miliSegundosC;
 var gradosH, gradosM, gradosS, gradosMS;
 var horas, minutos, segundos;
+var empezar, parar;
 var agujaMiliSegundosC, agujaSegundosC, agujaMinutosC, agujaHorasC;
+var agujaSegundosA, agujaMinutosA, agujaHorasA;
 
 function empezarCronometro() {
+    empezar.removeEventListener('click', empezarCronometro, false);//Se quita el evento en empezar
+    empezar.style.backgroundColor="#E50914";//Empezar se pone a rojo
+    parar.addEventListener('click', pararCronometro, false);//Se añade el evento en parar
+    parar.style.backgroundColor="#221F1F";//Parar se pone a negro
     horasC.style.color = "#221F1F";
     minutosC.style.color = "#221F1F";
     segundosC.style.color = "#221F1F";
@@ -79,11 +85,15 @@ function empezarCronometro() {
     }, 10);
 }
 function pararCronometro() {
+    empezar.addEventListener('click', empezarCronometro, false);
+    parar.removeEventListener('click', pararCronometro, false);
+    empezar.style.backgroundColor="#221F1F";
+    parar.style.backgroundColor="#E50914";
     clearInterval(intervalo);
     horasC.style.color = "#E50914";
     minutosC.style.color = "#E50914";
     segundosC.style.color = "#E50914";
-
+    
 }
 function actualizarHora() {
     var d = new Date();
@@ -103,6 +113,10 @@ function actualizarHora() {
     } else {
         segundos.innerHTML = d.getSeconds();
     }
+
+    agujaSegundosA.style.transform = "rotate(" + Math.round(6 * d.getSeconds()) + "deg)";
+    agujaMinutosA.style.transform = "rotate(" + Math.round(6 * d.getMinutes()) + "deg)";
+    agujaHorasA.style.transform = "rotate(" + Math.round(30 * d.getHours()) + 0.5 * d.getMinutes() + "deg)";
 }
 function cargar() {
     /*Reloj Digital*/
@@ -110,6 +124,10 @@ function cargar() {
     minutos = document.getElementById("minutos");
     segundos = document.getElementById("segundos");
     setInterval(actualizarHora, 1000);
+    /*Reloj Analógico*/
+    agujaHorasA=document.getElementById("agujaHorasA");
+    agujaMinutosA=document.getElementById("agujaMinutosA");
+    agujaSegundosA=document.getElementById("agujaSegundosA");
     /*Cronómetro ----- Tiempo*/
     horasC = document.getElementById("horasC");
     minutosC = document.getElementById("minutosC");
@@ -119,7 +137,6 @@ function cargar() {
     parar = document.getElementById("stop");
     /*Cronómetro ----- Controles*/
     empezar.addEventListener('click', empezarCronometro, false);
-    parar.addEventListener('click', pararCronometro, false);
     /*Cronómetro ----- grados*/
     gradosH = document.getElementById("gradosH");
     gradosM = document.getElementById("gradosM");

@@ -72,6 +72,7 @@ and open the template in the editor.
             }
             .controlCronometro:hover{
                 background-color: #E50914;
+                cursor: pointer;
             }
             #grados{
                 position: relative;
@@ -94,7 +95,7 @@ and open the template in the editor.
                 border-radius: 50%;
                 background: white;
             }
-             img{
+            img{
                 width: 400px;
                 border-radius: 50%;
             }
@@ -108,7 +109,7 @@ and open the template in the editor.
                 border-radius: 30%;
                 z-index: 10;
             }
-            #agujaMiliSegundosC{
+            #agujaMiliSegundosC,#agujaMiliSegundosA{
                 position:relative;
                 bottom: 400px;
                 opacity: 0.3;
@@ -117,7 +118,7 @@ and open the template in the editor.
                 height: 200px;
                 z-index: 5;
             }
-            #agujaSegundosC{
+            #agujaSegundosC,#agujaSegundosA{
                 position:relative;
                 bottom: 200px;
                 opacity: 0.8;
@@ -126,7 +127,7 @@ and open the template in the editor.
                 z-index: 8;
                 transition: all 1s linear;
             }
-            #agujaMinutosC{
+            #agujaMinutosC,#agujaMinutosA{
                 position:relative;
                 bottom: 40px;
                 opacity: 0.8;
@@ -135,16 +136,47 @@ and open the template in the editor.
                 z-index: 9;
                 transition: all 2s ease-in-out;
             }
-            #agujaHorasC{
+            #agujaHorasC,#agujaHorasA{
                 position:relative;
                 bottom: -100px;
                 left: -1px;
-                opacity: 0.8;
+                opacity: 1;
                 width: 7px;
                 height: 100px;
                 background: #E50914;
                 z-index: 10;
                 transition: all 3s ease-in-out;
+            }
+            #agujaHorasA{
+                transition: none;
+            }
+            /*EL marco del #reloj fue copiado de https://escss.blogspot.com/2016/10/relojes-css-js.html
+            y posteriormente modificado*/
+            .reloj {
+                will-change: contents;
+                position: relative; 
+                bottom: 20px;
+                right: 30px;
+                width: 400px; height: 400px; 
+                min-width: 0;
+                border-radius: 100%; 
+                /*border: double 9px var(--marcas); */
+                margin: 20px 30px;
+                background: 
+                    radial-gradient(var(--esfera) 69%, transparent 60%), 
+                    linear-gradient(to right, transparent 47%, var(--marcas) 47%, var(--marcas) 53%, transparent 52%) 0 -50px, 
+                    linear-gradient(transparent 48%, var(--marcas) 48%, var(--marcas) 52%, transparent 52%), 
+                    linear-gradient(30deg, transparent 49%, var(--marcas) 10%, var(--marcas) 51%, transparent 51%), 
+                    linear-gradient(60deg, transparent 49%, var(--marcas) 10%, var(--marcas) 51%, transparent 51%), 
+                    linear-gradient(120deg, transparent 49%, var(--marcas) 1%, var(--marcas) 51%, transparent 51%), 
+                    linear-gradient(150deg, transparent 49%, var(--marcas) 1%, var(--marcas) 51%, transparent 51%), 
+                    linear-gradient(90deg, var(--esfera) 48.5%, var(--marcas) 1%, var(--marcas) 51.5%, var(--esfera) 52%); 
+                background-clip: content-box; 
+                background-repeat: no-repeat;
+            }
+            html {
+                --esfera: #FFFFFF;
+                --marcas: #E50914;
             }
         </style>
     </head>
@@ -152,17 +184,16 @@ and open the template in the editor.
         <div id="digital">
             <h1>Reloj Digital</h1>
             <div id="hora">
-                <div id="horas"></div>
+                <div id="horas" ></div>
                 <div id="minutos"></div>
                 <div id="segundos"></div>
             </div>
         </div>
         <div id="analogicoA">
-            <div id="marcoA">
-                <div id="agujaHorasA"></div>
-                <div id="agujaMinutosA"></div>
-                <div id="agujaSegundosA"></div>
-                <div id="agujaMiliSegundosA"></div>
+            <div class="reloj">
+                <div id="agujaHorasA" class="agujas"></div>
+                <div id="agujaMinutosA" class="agujas"></div>
+                <div id="agujaSegundosA" class="agujas"></div>
             </div>
         </div>
         <div id="cronometro">
@@ -187,7 +218,7 @@ and open the template in the editor.
         </div>
 
         <div id="analogicoC">
-            <div id="marcoC">
+            <div class="reloj">
                 <div id="agujaHorasC" class="agujas"></div>
                 <div id="agujaMinutosC" class="agujas"></div>
                 <div id="agujaSegundosC" class="agujas"></div>
