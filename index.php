@@ -59,9 +59,7 @@
                     </table></a>
             </div>
             <div>
-                <p id="hora">
-
-                </p>
+                <p id="hora"></p>
             </div>
             <div id="contador">
                 <?php 
