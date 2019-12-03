@@ -27,7 +27,7 @@
                 background: white;
                 padding: 50px;
                 border-radius: 10px;
-                color:white;
+                color:black;
             }
             @media (max-width: 1500px){
                 #content{width:50%;}
@@ -66,7 +66,7 @@
         echo "<pre style='text-align:left;'>";
         print_r($_SERVER) . '<br>';
         echo "</pre>";
-        echo '<h3>Variable Cookies</h3>';
+        echo '<h3>Variable Cookie</h3>';
         print_r($_COOKIE);
         ?>
         </div>
