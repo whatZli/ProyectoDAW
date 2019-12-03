@@ -1,13 +1,10 @@
 <?php
 session_start();
-if(!isset($_SESSION["usuarioDAW205AppLogInLogOut"])){
-    header('Location: ../login.php');
-}
 
 if (isset($_POST['salir'])) {
     unset($_SESSION["usuarioDAW205AppLogInLogOut"]);
     unset($_SESSION["passwordDAW205AppLogInLogOut"]);
-    header('Location: ../login.php');
+    header('Location: ../../../indexProyectoTema5.html');
 }
 if (isset($_POST['detalle'])) {
     header('Location: detalle.php');
@@ -45,6 +42,7 @@ try {
     $stmt = $conn->prepare($sql1);
     $stmt->execute();
     $consulta = $conn->query($sql1);
+
 } catch (Exception $exc) {
     echo "Error: $exc->getMessage() <br>";
     echo "Codigo del error: $exc->getCode() <br>";
@@ -109,7 +107,7 @@ try {
             <h4>Contraseña: <?php echo $_SESSION['passwordDAW205AppLogInLogOut']; ?></h4>
             <h6>Última hora de conexión: <?php echo $ultimaHora ?></h6>
             <form action="<?php echo 'programa.php' ?>" method="post">
-                <input type="submit" name="salir" value="Cerrar Sesión">
+                <input type="submit" name="salir" value="Salir">
                 <input type="submit" name="detalle" value="Detalle">
             </form>
         </div>
@@ -117,7 +115,7 @@ try {
     <footer>
         <address>
             <a href="../../indexProyectoTema5.html	">&copy2019 Alex Dominguez</a>
-            <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOut" target="_blank"><img src="../images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
+            <a href="http://daw-usgit.sauces.local/Alex/ProyectoTema5/tree/master" target="_blank"><img src="images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
         </address>
     </footer>
 </body>

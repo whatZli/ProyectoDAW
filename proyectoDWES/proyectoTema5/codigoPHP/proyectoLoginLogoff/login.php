@@ -1,3 +1,45 @@
+<?php
+if (isset($_POST['volver'])) {
+    header('Location: ../../indexProyectoTema5.html');
+}
+if (isset($_POST['enviar'])) {
+    define("SERVER", "192.168.20.19");
+    define("USER", "usuarioDAW205DBProyectoTema5");
+    define("PASSWD", "paso");
+    define("DB", "DAW205DBProyectoTema5");
+
+
+    try {
+        $conn = new PDO("mysql:host=" . SERVER . ";dbname=" . DB, USER, PASSWD);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $exc) {
+        echo "Error: $exc->getMessage() <br>";
+        echo "Codigo del error: $exc->getCode() <br>";
+    }
+    try {
+        session_start();
+        $_SESSION['usuarioDAW205AppLogInLogOut'] = $_POST['usuario'];
+        $_SESSION['passwordDAW205AppLogInLogOut'] = $_POST['password'];
+
+        $usuarioIntroducido = $_POST['usuario'];
+        $passwordIntroducido = $_POST['password'];
+        $sql = "SELECT * FROM `Usuario` WHERE CodUsuario='$usuarioIntroducido' AND Password=SHA2('$usuarioIntroducido$passwordIntroducido',256)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $consulta = $conn->query($sql);
+
+        $registro = $consulta->fetchObject(); //S
+        if ($registro != NULL) {
+            header('Location: codigoPHP/programa.php');
+        }
+    } catch (PDOException $exc) {
+        echo "Error: $exc->getMessage() <br>";
+        echo "Codigo del error: $exc->getCode() <br>";
+    } finally {
+        unset($conn);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -29,6 +71,10 @@
                 border-radius: 10px;
                 color:white;
             }
+            button{
+                width:100%;
+                margin-bottom: 10px;
+            }
             @media (max-width: 1500px){
                 #content{width:50%;}
             }
@@ -46,52 +92,7 @@
     <body >
         <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
         <div id="content">
-            <?php
-            if (isset($_POST['enviar'])) {
 
-                define("SERVER", "192.168.20.19");
-                define("USER", "usuarioDAW205DBProyectoTema5");
-                define("PASSWD", "paso");
-                define("DB", "DAW205DBProyectoTema5");
-
-               
-                    try {
-                        $conn = new PDO("mysql:host=" . SERVER . ";dbname=" . DB, USER, PASSWD);
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    } catch (PDOException $exc) {
-                        echo "Error: $exc->getMessage() <br>";
-                        echo "Codigo del error: $exc->getCode() <br>";
-                    }
-                    try{
-                        session_start();
-                        $_SESSION['usuarioDAW205AppLogInLogOut'] = $_POST['usuario'];
-                        $_SESSION['passwordDAW205AppLogInLogOut'] = $_POST['password'];
-
-                        $usuarioIntroducido = $_POST['usuario'];
-                        $passwordIntroducido = $_POST['password'];
-                        $sql = "SELECT * FROM `Usuario` WHERE CodUsuario='$usuarioIntroducido' AND Password=SHA2('$usuarioIntroducido$passwordIntroducido',256)";
-                        $stmt = $conn->prepare($sql);
-                        $stmt->execute();
-                        $consulta = $conn->query($sql);
-
-                        $registro = $consulta->fetchObject(); //S
-                        if ($registro != NULL) {
-
-                            header('Location: codigoPHP/programa.php');
-                        } else {
-                            echo '<h1>Error al iniciar sesión</h1>';
-                        }
-                    } catch (PDOException $exc) {
-                        echo "Error: $exc->getMessage() <br>";
-                        echo "Codigo del error: $exc->getCode() <br>";
-                    } finally {
-                        unset($conn);
-                    }
-                }
-                if (isset($_POST['volver'])) {
-                    header('Location: ../../indexProyectoTema5.html');
-                }
-            ?>
             <h1>Inicio de sesión</h1>
             <form name="form1" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                 <div class="form-group">
@@ -104,14 +105,14 @@
                 </div>
                 <div class="form-group form-check">
                 </div>
-                <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
-                <button type="submit" name="volver" class="btn btn-primary" style="float:right;">Volver atrás</button>
+                <button type="submit" name="enviar" class="btn btn-primary">Iniciar Sesión</button>
+                <button type="submit" name="volver" class="btn btn-secondary" style="float:right;">Volver atrás</button>
             </form>
         </div>
         <footer>
             <address>
                 <a href="../../indexProyectoTema5.html	">&copy2019 Alex Dominguez</a>
-                <a href="http://daw-usgit.sauces.local/Alex/ProyectoTema5/tree/master" target="_blank"><img src="images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
+                <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOut" target="_blank"><img src="images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
             </address>
         </footer>
     </body>
