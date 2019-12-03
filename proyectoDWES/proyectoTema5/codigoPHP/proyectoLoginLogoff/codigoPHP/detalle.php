@@ -3,6 +3,9 @@ session_start();
 if (!isset($_SESSION["usuarioDAW205AppLogInLogOut"])) {
     header('Location: ../login.php');
 }
+if (isset($_POST['volver'])) {
+    header('Location: programa.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,12 +53,6 @@ if (!isset($_SESSION["usuarioDAW205AppLogInLogOut"])) {
     </head>
     <body >
         <div id="content">
-            <?php
-            if (isset($_POST['volver'])) {
-                header('Location: programa.php');
-            }
-            ?>
-
             <form action="<?php echo 'programa.php' ?>" method="post">
                 <input type="submit" name="volver" value="Volver"><br><br>
             </form>
