@@ -59,9 +59,13 @@ if (isset($_POST['volver'])) {
             <h1>Has accedido a detalle.php</h1>
             <?php
             echo '<h3>Variable Session</h3>';
+            echo "<pre style='text-align:left;'>";
             print_r($_SESSION);
+            echo "</pre>";
             echo '<h3>Variable Cookie</h3>';
+            echo "<pre style='text-align:left;'>";
             print_r($_COOKIE);
+            echo "</pre>";
             echo '<h3>Variable Server</h3>';
             echo "<pre style='text-align:left;'>";
             print_r($_SERVER) . '<br>';

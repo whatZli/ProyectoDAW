@@ -29,18 +29,25 @@ if (isset($_POST['iniciarSesion'])) {
             $_SESSION['descripcionDAW205AppLogInLogOut'] = $registro->DescUsuario;
             $_SESSION['perfilDAW205AppLogInLogOut'] = $registro->Perfil;
             $_SESSION['uConexiónDAW205AppLogInLogOut'] = $registro->FechaHoraUltimaConexion; //Se guarda la última fecha de conexión
+            $_SESSION['numConexiónDAW205AppLogInLogOut'] = $registro->NumConexiones+1; //Se guarda el número de conexiones
             
             //Cambiar la fecha de conexión a la actual
             try {
                 $sql1 = "UPDATE `Usuario` SET `FechaHoraUltimaConexion` = NULL  WHERE `Usuario`.`CodUsuario` = '$usuarioIntroducido'";
                 $stmt = $conn->prepare($sql1);
                 $stmt->execute();
-                $consulta = $conn->query($sql1);
             } catch (Exception $exc) {
                 echo "Error: $exc->getMessage() <br>";
                 echo "Codigo del error: $exc->getCode() <br>";
-            } finally {
-                unset($conn);
+            }
+            //Cambiar el numero de conexiones a la app
+            try {
+                $sql2 = "UPDATE `Usuario` SET `NumConexiones` = `NumConexiones`+1 WHERE `usuario`.`CodUsuario` = '$usuarioIntroducido';";
+                $stmt2 = $conn->prepare($sql2);
+                $stmt2->execute();
+            } catch (Exception $exc) {
+                echo "Error: $exc->getMessage() <br>";
+                echo "Codigo del error: $exc->getCode() <br>";
             }
 
             header('Location: codigoPHP/programa.php');
@@ -54,16 +61,16 @@ if (isset($_POST['iniciarSesion'])) {
 }
 if (isset($_GET['idioma'])) {
     if ($_GET['idioma'] === "eng") {
-        setcookie('idioma', "eng", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
+        setcookie('idioma', "eng", time() + 7 * 24 * 60 * 60,"/"); //La Cookie tiene un periodo de vida de 7 días
         header("Location: login.php");
     }
     if ($_GET['idioma'] === "cas") {
-        setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
+        setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60,"/"); //La Cookie tiene un periodo de vida de 7 días
         header("Location: login.php");
     }
 }
 if (!isset($_COOKIE['idioma'])) {
-    setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
+    setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60,"/"); //La Cookie tiene un periodo de vida de 7 días
     header("Location: login.php");
 }
 ?>
@@ -115,9 +122,11 @@ if (!isset($_COOKIE['idioma'])) {
                 border-radius: 7px;
                 font-family: Montserrat, sans-serif;
                 position: relative;
+                transition: 0.3s ease;
             }
             input+label:hover{
                 cursor: pointer;
+                background: #0069D9;
             }
             button{
                 width:100%;
@@ -129,6 +138,9 @@ if (!isset($_COOKIE['idioma'])) {
                 position:absolute;
                 color:white;
                 display: none;
+            }
+            input:checked +label{
+                background: #00adFb;
             }
             input#is:checked ~ #a1,input#rg:checked ~ #a2{
                 display: block;

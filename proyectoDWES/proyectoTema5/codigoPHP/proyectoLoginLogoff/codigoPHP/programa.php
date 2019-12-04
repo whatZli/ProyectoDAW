@@ -7,6 +7,8 @@ if (isset($_POST['salir'])) {
     unset($_SESSION["usuarioDAW205AppLogInLogOut"]);
     unset($_SESSION["perfilDAW205AppLogInLogOut"]);
     unset($_SESSION["descripcionDAW205AppLogInLogOut"]);
+    unset($_SESSION["uConexiónDAW205AppLogInLogOut"]);
+    unset($_SESSION["numConexiónDAW205AppLogInLogOut"]);
     header('Location: ../login.php');
 }
 if (isset($_POST['detalle'])) {
@@ -75,6 +77,8 @@ if (isset($_POST['detalle'])) {
                 <h4>Perfil: <?php echo $_SESSION['perfilDAW205AppLogInLogOut']; ?></h4>
                 <h4>Idioma elegido: <?php echo $_COOKIE['idioma']; ?></h4>
                 <h6>Última hora de conexión: <?php echo $_SESSION['uConexiónDAW205AppLogInLogOut'] ?></h6>
+                <h6>Número de veces conectado: <?php echo $_SESSION['numConexiónDAW205AppLogInLogOut'] ?></h6>
+                
                 <form action="<?php echo 'programa.php' ?>" method="post">
                 <input type="submit" name="salir" class="btn btn-warning" value="Cerrar Sesión">
                 <input type="submit" name="detalle" class="btn btn-secondary" value="Detalle">
