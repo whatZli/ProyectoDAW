@@ -19,7 +19,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
 
         $usuarioIntroducido = $_SERVER['PHP_AUTH_USER'];
         $passwordIntroducido = $_SERVER['PHP_AUTH_PW'];
-        $sql = "SELECT * FROM `Usuario` WHERE CodUsuario='$usuarioIntroducido' AND Password=SHA2('$passwordIntroducido',256)";
+        $sql = "SELECT * FROM `Usuario` WHERE CodUsuario='$usuarioIntroducido' AND Password=SHA2('$usuarioIntroducido$passwordIntroducido',256)";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $consulta = $conn->query($sql);

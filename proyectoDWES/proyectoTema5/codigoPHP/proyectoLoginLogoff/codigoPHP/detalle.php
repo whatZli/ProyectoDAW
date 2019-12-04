@@ -74,7 +74,7 @@ if (isset($_POST['volver'])) {
     <footer>
         <address>
             <a href="../../indexProyectoTema5.html">&copy2019 Alex Dominguez</a>
-            <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOut" target="_blank"><img src="../images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
+            <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOff/tree/master" target="_blank"><img src="../images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
         </address>
     </footer>
 </body>

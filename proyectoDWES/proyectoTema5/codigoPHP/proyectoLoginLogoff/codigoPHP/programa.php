@@ -12,46 +12,6 @@ if (isset($_POST['salir'])) {
 if (isset($_POST['detalle'])) {
     header('Location: detalle.php');
 }
-
-define("SERVER", "192.168.20.19");
-define("USER", "usuarioDAW205DBProyectoTema5");
-define("PASSWD", "paso");
-define("DB", "DAW205DBProyectoTema5");
-try {
-    $conn = new PDO("mysql:host=" . SERVER . ";dbname=" . DB, USER, PASSWD);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $exc) {
-    echo "Error al conectar a la base de datos<br>";
-}
-
-$usuarioIntroducido = $_SESSION['usuarioDAW205AppLogInLogOut'];
-$descripcionIntroducido = $_SESSION['descripcionDAW205AppLogInLogOut'];
-$perfilIntroducido = $_SESSION['perfilDAW205AppLogInLogOut'];
-//Consulta para coger la última fecha de conexión
-try {
-    $sql = "SELECT FechaHoraUltimaConexion FROM `Usuario` WHERE CodUsuario='$usuarioIntroducido'";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $consulta = $conn->query($sql);
-
-    $registro = $consulta->fetchObject(); //S
-    $ultimaHora = $registro->FechaHoraUltimaConexion;
-} catch (PDOException $exc) {
-    echo "Error: $exc->getMessage() <br>";
-    echo "Codigo del error: $exc->getCode() <br>";
-}
-//Cambiar la fecha de conexión a la actual
-try {
-    $sql1 = "UPDATE `Usuario` SET `FechaHoraUltimaConexion` = NULL WHERE `Usuario`.`CodUsuario` = '$usuarioIntroducido'";
-    $stmt = $conn->prepare($sql1);
-    $stmt->execute();
-    $consulta = $conn->query($sql1);
-} catch (Exception $exc) {
-    echo "Error: $exc->getMessage() <br>";
-    echo "Codigo del error: $exc->getCode() <br>";
-} finally {
-    unset($conn);
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -104,13 +64,18 @@ try {
     <body >
         <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
         <div id="content">
-            <h1>Bienvenido <?php echo ucfirst($_SESSION['usuarioDAW205AppLogInLogOut']); ?></h1>
-            <h4>Usuario: <?php echo $_SESSION['usuarioDAW205AppLogInLogOut']; ?></h4>
-            <h4>Descripción: <?php echo $_SESSION['descripcionDAW205AppLogInLogOut']; ?></h4>
-            <h4>Perfil: <?php echo $_SESSION['perfilDAW205AppLogInLogOut']; ?></h4>
-            <h4>Idioma elegido: <?php echo $_COOKIE['idioma'] ;?></h4>
-            <h6>Última hora de conexión: <?php echo $ultimaHora ?></h6>
-            <form action="<?php echo 'programa.php' ?>" method="post">
+            <?php if ($_COOKIE['idioma'] == "cas") {
+                ?><h1>Bienvenido <?php echo ucfirst($_SESSION['usuarioDAW205AppLogInLogOut']); ?></h1>
+            <?php } else if ($_COOKIE['idioma'] == "eng"){ ?>
+                <h1>Welcome <?php echo ucfirst($_SESSION['usuarioDAW205AppLogInLogOut']); ?></h1>
+                <?php } ?>
+
+                <h4>Usuario: <?php echo $_SESSION['usuarioDAW205AppLogInLogOut']; ?></h4>
+                <h4>Descripción: <?php echo $_SESSION['descripcionDAW205AppLogInLogOut']; ?></h4>
+                <h4>Perfil: <?php echo $_SESSION['perfilDAW205AppLogInLogOut']; ?></h4>
+                <h4>Idioma elegido: <?php echo $_COOKIE['idioma']; ?></h4>
+                <h6>Última hora de conexión: <?php echo $_SESSION['uConexiónDAW205AppLogInLogOut'] ?></h6>
+                <form action="<?php echo 'programa.php' ?>" method="post">
                 <input type="submit" name="salir" class="btn btn-warning" value="Cerrar Sesión">
                 <input type="submit" name="detalle" class="btn btn-secondary" value="Detalle">
             </form>
@@ -119,7 +84,7 @@ try {
     <footer>
         <address>
             <a href="../../indexProyectoTema5.html">&copy2019 Alex Dominguez</a>
-            <a href="http://daw-usgit.sauces.local/Alex/ProyectoTema5/tree/master" target="_blank"><img src="../images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
+            <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOff/tree/master" target="_blank"><img src="../images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
         </address>
     </footer>
 </body>

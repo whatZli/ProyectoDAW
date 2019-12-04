@@ -28,6 +28,21 @@ if (isset($_POST['iniciarSesion'])) {
             $_SESSION['usuarioDAW205AppLogInLogOut'] = $registro->CodUsuario;
             $_SESSION['descripcionDAW205AppLogInLogOut'] = $registro->DescUsuario;
             $_SESSION['perfilDAW205AppLogInLogOut'] = $registro->Perfil;
+            $_SESSION['uConexiónDAW205AppLogInLogOut'] = $registro->FechaHoraUltimaConexion; //Se guarda la última fecha de conexión
+            
+            //Cambiar la fecha de conexión a la actual
+            try {
+                $sql1 = "UPDATE `Usuario` SET `FechaHoraUltimaConexion` = NULL  WHERE `Usuario`.`CodUsuario` = '$usuarioIntroducido'";
+                $stmt = $conn->prepare($sql1);
+                $stmt->execute();
+                $consulta = $conn->query($sql1);
+            } catch (Exception $exc) {
+                echo "Error: $exc->getMessage() <br>";
+                echo "Codigo del error: $exc->getCode() <br>";
+            } finally {
+                unset($conn);
+            }
+
             header('Location: codigoPHP/programa.php');
         }
     } catch (PDOException $exc) {
@@ -36,19 +51,20 @@ if (isset($_POST['iniciarSesion'])) {
     } finally {
         unset($conn);
     }
-}echo '<br><br><br>';
+}
 if (isset($_GET['idioma'])) {
     if ($_GET['idioma'] === "eng") {
         setcookie('idioma', "eng", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
-        echo $_COOKIE['idioma'];
+        header("Location: login.php");
     }
     if ($_GET['idioma'] === "cas") {
         setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
-        echo $_COOKIE['idioma'];
+        header("Location: login.php");
     }
 }
 if (!isset($_COOKIE['idioma'])) {
     setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
+    header("Location: login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -156,7 +172,6 @@ if (!isset($_COOKIE['idioma'])) {
                 }
                 ?>
                 <article id="a1">
-
                     <h2>Inicio de sesión</h2>
                     <form name="logIn" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="form-group">
@@ -200,7 +215,7 @@ if (!isset($_COOKIE['idioma'])) {
         <footer>
             <address>
                 <a href="../../indexProyectoTema5.html	">&copy2019 Alex Dominguez</a>
-                <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOut" target="_blank"><img src="images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
+                <a href="http://daw-usgit.sauces.local/Alex/proyectoLogInLogOff/tree/master" target="_blank"><img src="images/gitlab.png" alt="asd" width="40" style="float:right;"/></a>
             </address>
         </footer>
     </body>
