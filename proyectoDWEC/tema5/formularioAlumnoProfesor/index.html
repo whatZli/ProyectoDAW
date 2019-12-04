@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>A Pen by  ale_xD_ominguez</title>
+        <link rel="stylesheet" href="./style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+        <h1>Formulario final</h1>
+        <button class="menu" id="eAlumno">Alumno</button>
+        <button class="menu" id="eProfesor">Profesor</button>
+        <form id="alumno" action="/action_page.php" method="get" target="_blank">
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre">
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos"  name="apellidos" placeholder="Introduzca sus apellidos">
+
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" placeholder="12345678Z" name="dni" >
+
+            <div id="ciclosGrupoa">
+                <label for="ciclo">Ciclo</label>
+                <select id="ciclo">
+                    <option value="0" name="0">Elija una opción</option>
+                    <option value="smr"  name="optsmr" >SMR</option>
+                    <option value="daw" name="optdaw" >DAW</option>
+                </select>
+
+                <label for="curso">Curso</label>
+                <select id="curso">
+                    <option value="0" name="0">Elija una opción</option>
+                    <option value="curso1" name="curso1">1º Curso</option>
+                    <option value="curso2" name="curso2">2º Curso</option>
+                </select>
+                <div id="asignaturasCurso" class="asignaturas"></div>
+            </div>
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="ejemploEmail@gmail.com"><br>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="8" cols="70" placeholder="Introduzca su mensaje"></textarea>
+            <label for="lopd">Acepto las condiciones de la LOPD</label>
+            <input type="checkbox" value="lopd" name="lopd" id="lopd"><br>
+
+            <input type="submit" value="Enviar" name="enviar" id="enviar" disabled="">
+            <input type="reset" value="Limpiar" name="borrar" id="borrar">
+        </form>
+        <form id="profesor" action="/action_page.php" method="get" target="_blank">
+
+            <label for="nombrep">Nombre</label>
+            <input type="text" id="nombrep" name="nombrep" placeholder="Introduzca su nombre">
+
+            <label for="apellidosp">Apellidos</label>
+            <input type="text" id="apellidosp" name="apellidosp" placeholder="Introduzca sus apellidos">
+
+            <label for="dnip">DNI</label>
+            <input type="text" id="dnip" name="dnip" placeholder="12345678Z">
+
+            <div id="ciclosGrupop">
+                <div id="fila1">
+                    <p>Ciclos a los que impartes</p>
+                    <label for="ciclop">Ciclo</label>
+                    <select id="ciclop">
+                        <option value="0p">Elija una opción</option>
+                        <option value="smrp">SMR</option>
+                        <option value="dawp">DAW</option>
+                    </select>
+
+                    <label for="cursop">Curso</label>
+                    <select id="cursop">
+                        <option value="0p">Elija una opción</option>
+                        <option value="curso1p">1º Curso</option>
+                        <option value="curso2p">2º Curso</option>
+                    </select>
+
+                    <div id="bsmr1p">
+                        <label for="smr1p">Ciclo</label>
+                        <select id="smr1p">
+                            <option value="REDES">REDES</option>
+                            <option value="SE">SE</option>
+                            <option value="SSOO">SSOO</option>
+                            <option value="AO">AO</option>
+                            <option value="FOL">FOL</option>
+                        </select>
+                    </div>
+                    <div id="bsmr2p">
+                        <label for="smr2p">Ciclo</label>
+                        <select id="smr2p">
+                            <option value="SI">SI</option>
+                            <option value="IE">IE</option>
+                            <option value="BBDD">BBDD</option>
+                            <option value="SR">SR</option>
+                            <option value="SSOO">SSOO</option>
+                        </select>
+                    </div>
+                    <div id="bdaw1p">
+                        <label for="daw1p">Ciclo</label>
+                        <select id="daw1p">
+                            <option value="PROG">PROG</option>
+                            <option value="BBDD">BBDD</option>
+                            <option value="SSOO">SSOO</option>
+                            <option value="LM">LM</option>
+                            <option value="ED">ED</option>
+                        </select>
+                    </div>
+                    <div id="bdaw2p">
+                        <label for="daw2p">Ciclo</label>
+                        <select id="daw2p">
+                            <option value="DWES">DWES</option>
+                            <option value="DWEC">DWEC</option>
+                            <option value="DAW">DAW</option>
+                            <option value="DIW">DIW</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="menu" id="botonAgregarAsignatura">Agregar</div>
+                <div id="asignaturasAgregadas">
+                    <select id="selectAsignaturasAgregadas" size="15"></select>
+                </div>
+            </div>
+            <label for="emailp">Email</label>
+            <input type="text" id="emailp" name="emailp" placeholder="ejemploEmail@gmail.com">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensajep" name="mensajep" rows="8" cols="70" placeholder="Introduzca su mensaje"></textarea>
+            <label for="lopdp">Acepto las condiciones de la LOPD</label>
+            <input type="checkbox" value="lopdp" name="lopdp" id="lopdp"><br>
+
+            <input type="submit" value="Enviar" name="enviarp" id="enviarp" disabled="">
+            <input type="reset" value="Limpiar" name="borrarp" id="borrarp">
+        </form>
+    </body>
+    <!-- partial -->
+</html>
