@@ -28,14 +28,17 @@ h2{
     padding-bottom:10px;
     background-color: #ccdef9;
 }
-#fila1,#botonAgregarAsignatura,#asignaturasAgregadas{
+#fila1,#botonAgregarAsignatura,#botonBorrarAsignatura,#asignaturasAgregadas{
     display:inline-block;
     width:33%;
 }
-#botonAgregarAsignatura{
+#botonAgregarAsignatura,#botonBorrarAsignatura{
     position:relative;
     left:-50px;
     top:-50px;
+}
+#botonAgregarAsignatura:hover,#botonBorrarAsignatura:hover{
+    cursor: pointer;
 }
 #fila1 select{
     width:150px;

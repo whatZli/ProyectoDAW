@@ -29,9 +29,8 @@ if (isset($_POST['iniciarSesion'])) {
             $_SESSION['descripcionDAW205AppLogInLogOut'] = $registro->DescUsuario;
             $_SESSION['perfilDAW205AppLogInLogOut'] = $registro->Perfil;
             $_SESSION['uConexiónDAW205AppLogInLogOut'] = $registro->FechaHoraUltimaConexion; //Se guarda la última fecha de conexión
-            $_SESSION['numConexiónDAW205AppLogInLogOut'] = $registro->NumConexiones+1; //Se guarda el número de conexiones
-            
-            //Cambiar la fecha de conexión a la actual
+            $_SESSION['numConexiónDAW205AppLogInLogOut'] = $registro->NumConexiones + 1; //Se guarda el número de conexiones
+//Cambiar la fecha de conexión a la actual
             try {
                 $sql1 = "UPDATE `Usuario` SET `FechaHoraUltimaConexion` = NULL  WHERE `Usuario`.`CodUsuario` = '$usuarioIntroducido'";
                 $stmt = $conn->prepare($sql1);
@@ -40,14 +39,16 @@ if (isset($_POST['iniciarSesion'])) {
                 echo "Error: $exc->getMessage() <br>";
                 echo "Codigo del error: $exc->getCode() <br>";
             }
-            //Cambiar el numero de conexiones a la app
+//Cambiar el numero de conexiones a la app
             try {
-                $sql2 = "UPDATE `Usuario` SET `NumConexiones` = `NumConexiones`+1 WHERE `usuario`.`CodUsuario` = '$usuarioIntroducido';";
+                $sql2 = "UPDATE `Usuario` SET `NumConexiones` = `NumConexiones`+1 WHERE `Usuario`.`CodUsuario` = '$usuarioIntroducido'";
                 $stmt2 = $conn->prepare($sql2);
                 $stmt2->execute();
             } catch (Exception $exc) {
                 echo "Error: $exc->getMessage() <br>";
                 echo "Codigo del error: $exc->getCode() <br>";
+            } finally {
+                unset($conn);
             }
 
             header('Location: codigoPHP/programa.php');
@@ -59,18 +60,72 @@ if (isset($_POST['iniciarSesion'])) {
         unset($conn);
     }
 }
+if (isset($_POST['registrar'])) {
+    require 'core/libreriaValidacionFormularios.php';
+//Declaración de variables
+    $entradaOK = true;
+
+//Declaración del array de errores
+
+    $aErrores['codUser'] = null;
+    $aErrores['descUser'] = null;
+    $aErrores['password'] = null;
+
+//Declaración del array de datos del formulario
+
+    $aFormulario['codUser'] = null;
+    $aFormulario['descUser'] = null;
+    $aFormulario['password'] = null;
+
+    $aErrores['codUser'] = validacionFormularios::comprobarAlfabetico($_POST['codUser'], 15, 1, 1);
+    $aErrores['descUser'] = validacionFormularios::comprobarAlfabetico($_POST['descUser'], 250, 1, 1);
+    $aErrores['password'] = validacionFormularios::comprobarAlfaNumerico($_POST['password'], 20, 1, 1);
+
+    foreach ($aErrores as $campo) { //recorre el array en busca de mensajes de error
+        if ($campo != null) {
+            $entradaOK = false; //cambia la condiccion de la variable
+        }
+    }
+
+    if ($entradaOK) { //si el valor es true procesamos los datos que hemos recogido   
+        $aFormulario['codUser'] = strtolower($_POST['codUser']); //en el array del formulario guardamos los datos
+        $aFormulario['descUser'] = $_POST['descUser']; //en el array del formulario guardamos los datos
+        $aFormulario['password'] = $_POST['password']; //en el array del formulario guardamos los datos
+
+        require 'config/conexion.php';
+        try {
+            $conn = new PDO("mysql:host=" . SERVER . ";dbname=" . DB, USER, PASSWD);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $exc) {
+            echo "Error: $exc->getMessage() <br>";
+            echo "Codigo del error: $exc->getCode() <br>";
+        }
+        try {
+            $sql = "INSERT INTO `Usuario` (`CodUsuario`, `DescUsuario`, `Password`, `Perfil`, `FechaHoraUltimaConexion`, `NumConexiones`, `ImagenUsuario`) VALUES (:codUser, :descUser, :password, 'usuario', CURRENT_TIMESTAMP, '0', NULL)"; //Los : que van delante, es para indicar que sera una consulta preparada
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":codUser", $aFormulario["codUser"]);
+            $stmt->bindParam(":descUser", $aFormulario["descUser"]);
+            $passwordHash=hash('sha256', $aFormulario["codUser"].$aFormulario['password']);
+            $stmt->bindParam(":password", $passwordHash);
+            $stmt->execute();
+        } catch (PDOException $exc) {
+            echo "Error: $exc->getMessage() <br>";
+            echo "Codigo del error: $exc->getCode() <br>";
+        }
+    }
+}
 if (isset($_GET['idioma'])) {
     if ($_GET['idioma'] === "eng") {
-        setcookie('idioma', "eng", time() + 7 * 24 * 60 * 60,"/"); //La Cookie tiene un periodo de vida de 7 días
+        setcookie('idioma', "eng", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
         header("Location: login.php");
     }
     if ($_GET['idioma'] === "cas") {
-        setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60,"/"); //La Cookie tiene un periodo de vida de 7 días
+        setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
         header("Location: login.php");
     }
 }
 if (!isset($_COOKIE['idioma'])) {
-    setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60,"/"); //La Cookie tiene un periodo de vida de 7 días
+    setcookie('idioma', "cas", time() + 7 * 24 * 60 * 60); //La Cookie tiene un periodo de vida de 7 días
     header("Location: login.php");
 }
 ?>
@@ -201,7 +256,7 @@ if (!isset($_COOKIE['idioma'])) {
                     </form>
                 </article>
                 <article id="a2">
-                    <h2>Registro de usuarios (No está activo)</h2>
+                    <h2>Registro de usuarios</h2>
                     <form name="registro" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="form-group">
                             <label for="codUser">Código de usuario</label>

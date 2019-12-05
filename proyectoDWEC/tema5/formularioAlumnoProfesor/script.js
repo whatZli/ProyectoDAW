@@ -2,7 +2,7 @@
  * Carga todos los elementos de los formularios y le añade los eventos
  * */
 function cargar() {
-    alSeleccionarAlumno();
+    alSeleccionarProfesor();
 
     nombreAlumno = document.getElementById("nombre");
     nombreAlumno.addEventListener("blur", validaNombreAlumno, false);
@@ -125,25 +125,35 @@ function validaEmailAlumno() {
  * Si el ciclo y curso seleccionados coinciden se muestran unas determinadas asignaturas
  * */
 function verAsignaturasAlumno() {
-    var asignaturas = ["DAW", "DIW", "DWES", "DWEC"];
     var asignaturasCurso = document.getElementById("asignaturasCurso");
-    
-    while(asignaturasCurso.hasChildNodes()){
-          asignaturasCurso.removeChild(asignaturasCurso.firstChild);  
+    while (asignaturasCurso.hasChildNodes()) {
+        asignaturasCurso.removeChild(asignaturasCurso.firstChild);
     }
-    
-    for (var i = 0; i < asignaturas.length; i++) {
-        var asignaturasCurso = document.getElementById("asignaturasCurso");
-        asignaturasCurso.style.display = "block";
-        var elementoInput = document.createElement("input");
-        elementoInput.setAttribute("type", "checkbox");
-        elementoInput.setAttribute("id", asignaturas[i]);
-        var elementoLabel = document.createElement("label");
-        elementoLabel.setAttribute("for", asignaturas[i]);
-        var asignatura = document.createTextNode(asignaturas[i]);
-        elementoLabel.appendChild(asignatura);
-        asignaturasCurso.appendChild(elementoInput);
-        asignaturasCurso.appendChild(elementoLabel);
+
+    if (ciclo.selectedIndex !== 0 && curso.selectedIndex !== 0) {
+        if (ciclo.selectedIndex === 2 && curso.selectedIndex === 2) {
+            var asignaturas = ["DAW", "DIW", "DWES", "DWEC"];
+        } else if (ciclo.selectedIndex === 2 && curso.selectedIndex === 1) {
+            var asignaturas = ["PROG", "LM", "BBDD", "SO", "ED"];
+        } else if (ciclo.selectedIndex === 1 && curso.selectedIndex === 2) {
+            var asignaturas = ["SI", "SO", "BBDD", "IE", "REDES"];
+        } else if (ciclo.selectedIndex === 1 && curso.selectedIndex === 1) {
+            var asignaturas = ["OFIMATICA", "SO", "BBDD", "FOL", "REDES"];
+        }
+
+        for (var i = 0; i < asignaturas.length; i++) {
+            var asignaturasCurso = document.getElementById("asignaturasCurso");
+            asignaturasCurso.style.display = "block";
+            var elementoInput = document.createElement("input");
+            elementoInput.setAttribute("type", "checkbox");
+            elementoInput.setAttribute("id", asignaturas[i]);
+            var elementoLabel = document.createElement("label");
+            elementoLabel.setAttribute("for", asignaturas[i]);
+            var asignatura = document.createTextNode(asignaturas[i]);
+            elementoLabel.appendChild(asignatura);
+            asignaturasCurso.appendChild(elementoInput);
+            asignaturasCurso.appendChild(elementoLabel);
+        }
     }
 }
 /*FUNCTION cambiarEstadoEnviarAlumno
@@ -242,18 +252,25 @@ function verAsignaturasProfesor() {
     var botonAgregar = document.getElementById("botonAgregarAsignatura");
     botonAgregar.style.display = "none";
     botonAgregar.addEventListener("click", botonAgregarAsignatura);
+    var botonBorrar = document.getElementById("botonBorrarAsignatura");
+    botonBorrar.style.display = "none";
+    botonBorrar.addEventListener("click", botonBorrarAsignatura);
     if (ciclop.selectedIndex === 1 && cursop.selectedIndex === 1) {
         smr1.style.display = "block";
         botonAgregar.style.display = "inline-block";
+        botonBorrar.style.display = "inline-block";
     } else if (ciclop.selectedIndex === 1 && cursop.selectedIndex === 2) {
         smr2.style.display = "block";
         botonAgregar.style.display = "inline-block";
+        botonBorrar.style.display = "inline-block";
     } else if (ciclop.selectedIndex === 2 && cursop.selectedIndex === 1) {
         daw1.style.display = "block";
         botonAgregar.style.display = "inline-block";
+        botonBorrar.style.display = "inline-block";
     } else if (ciclop.selectedIndex === 2 && cursop.selectedIndex === 2) {
         daw2.style.display = "block";
         botonAgregar.style.display = "inline-block";
+        botonBorrar.style.display = "inline-block";
     }
 }
 function botonAgregarAsignatura() {
@@ -277,6 +294,12 @@ function botonAgregarAsignatura() {
         option.text = strUser;
     }
     elementoNuevo.add(option);
+}
+function botonBorrarAsignatura(){
+    console.log('Se va a borrar el elemento');
+    var optionPrimero=document.getElementsByTagName('option')[0];
+    var option=document.getElementsByTagName("option")[0];
+    optionPrimero.removeChild(option);
 }
 /*FUNCTION validaEmailProfesor
  * Se valida si el Email es válido
