@@ -36,6 +36,7 @@ if (isset($_POST['volver'])) {
                 padding: 20px;
                 border-radius: 10px;
                 color:black;
+                text-align: left;
             }
             @media (max-width: 1500px){
                 #content{width:50%;}
