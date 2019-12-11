@@ -22,33 +22,14 @@ if (isset($_POST['volver'])) {
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../webroot/css/style.css"  rel="stylesheet"         type="text/css" title="Default style">
         <style>
-            .bg-custom {
-                background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
-            }
-
-            .bg-custom-1 {
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
-            }
             #content{
-                width:150%;
+                width:120%;
                 margin: 0;
                 background: white;
                 padding: 20px;
                 border-radius: 10px;
                 color:black;
                 text-align: left;
-            }
-            @media (max-width: 1500px){
-                #content{width:50%;}
-            }
-            @media (max-width: 1200px){
-                #content{width:65%;}
-            }
-            @media (max-width: 1000px){
-                #content{width:75%;}
-            }
-            @media (max-width: 700px){
-                #content{width:90%;}
             }
         </style>
     </head>
@@ -57,7 +38,6 @@ if (isset($_POST['volver'])) {
             <form action="<?php echo 'programa.php' ?>" method="post">
                 <input type="submit" name="volver" value="Volver"><br><br>
             </form>
-            <h1>Has accedido a detalle.php</h1>
             <?php
             echo '<h3>Variable Session</h3>';
             echo "<pre style='text-align:left;'>";

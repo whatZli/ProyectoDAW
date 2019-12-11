@@ -47,25 +47,13 @@ if (isset($_POST['perfil'])) {
                 bottom: 30px;
             }
             #content{
-                width:40%;
+                width:600px;
                 margin: auto;
                 margin-top: 200px;
                 background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
                 padding: 50px;
                 border-radius: 10px;
                 color:white;
-            }
-            @media (max-width: 1500px){
-                #content{width:50%;}
-            }
-            @media (max-width: 1200px){
-                #content{width:65%;}
-            }
-            @media (max-width: 1000px){
-                #content{width:75%;}
-            }
-            @media (max-width: 700px){
-                #content{width:90%;}
             }
         </style>
     </head>
@@ -75,7 +63,7 @@ if (isset($_POST['perfil'])) {
             <form action="<?php echo 'programa.php' ?>" method="post">
                 <input type="submit" name="salir" class="btn btn-warning" value="Cerrar Sesión">
                 <input type="submit" name="perfil" class="btn btn-secondary" value="Perfil">
-                <input type="submit" name="detalle" class="btn btn-secondary" value="Detalle">
+                <input type="submit" name="detalle" class="btn btn-secondary" value="Detalle"><br><br>
             </form>
             <br><br>
             <?php if ($_COOKIE['idioma'] == "cas") {

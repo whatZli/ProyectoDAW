@@ -70,12 +70,6 @@ if (isset($_POST['guardar'])) {
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../webroot/css/style.css"  rel="stylesheet"         type="text/css" title="Default style">
         <style>
-            .bg-custom {
-                background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
-            }
-            .bg-custom-1 {
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
-            }
             input,label{
                 float:left;
             }
@@ -88,26 +82,13 @@ if (isset($_POST['guardar'])) {
                 float:right;
             }
             #content{
-                width:40%;
+                width:650px;
                 height: 500px;
                 margin: auto;
                 margin-top: 200px;
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
                 padding: 50px;
                 border-radius: 10px;
                 color:white;
-            }
-            @media (max-width: 1500px){
-                #content{width:50%;}
-            }
-            @media (max-width: 1200px){
-                #content{width:65%;}
-            }
-            @media (max-width: 1000px){
-                #content{width:75%;}
-            }
-            @media (max-width: 700px){
-                #content{width:90%;}
             }
         </style>
     </head>
