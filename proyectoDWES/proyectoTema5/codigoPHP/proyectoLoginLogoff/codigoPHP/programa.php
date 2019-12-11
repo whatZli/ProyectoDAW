@@ -67,18 +67,18 @@ if (isset($_POST['perfil'])) {
             </form>
             <br><br>
             <?php if ($_COOKIE['idioma'] == "cas") {
-                ?><h1>Hola <?php echo ucfirst($_SESSION['usuarioDAW205AppLogInLogOut']); ?></h1>
+                ?><h2>Hola <?php echo ucfirst($_SESSION['descripcionDAW205AppLogInLogOut']); ?>. Esta es la <?php echo $_SESSION['numConexiónDAW205AppLogInLogOut'] ?>º vez que se conecta. La fecha de la última conexión fue <?php echo $_SESSION['uConexiónDAW205AppLogInLogOut'] ?></h2>
             <?php } else if ($_COOKIE['idioma'] == "eng") { ?>
-                <h1>Welcome <?php echo ucfirst($_SESSION['usuarioDAW205AppLogInLogOut']); ?></h1>
+                <h2>Welcome <?php echo ucfirst($_SESSION['descripcionDAW205AppLogInLogOut']); ?>. This is the <?php echo $_SESSION['numConexiónDAW205AppLogInLogOut'] ?>th time your connects. The time of last connection was <?php echo $_SESSION['uConexiónDAW205AppLogInLogOut'] ?></h2>
             <?php } ?>
 
-            <h4>Usuario: <?php echo $_SESSION['usuarioDAW205AppLogInLogOut']; ?></h4>
+<!--            <h4>Usuario: <?php echo $_SESSION['usuarioDAW205AppLogInLogOut']; ?></h4>
             <h4>Descripción: <?php echo $_SESSION['descripcionDAW205AppLogInLogOut']; ?></h4>
             <h4>Perfil: <?php echo $_SESSION['perfilDAW205AppLogInLogOut']; ?></h4>
             <h4>Idioma elegido: <?php echo $_COOKIE['idioma']; ?></h4>
             <h6>Última hora de conexión: <?php echo $_SESSION['uConexiónDAW205AppLogInLogOut'] ?></h6>
             <h6>Número de veces conectado: <?php echo $_SESSION['numConexiónDAW205AppLogInLogOut'] ?></h6>
-
+-->
 
         </div>
     </body>

@@ -6,6 +6,9 @@ if (!isset($_SESSION["usuarioDAW205AppLogInLogOut"])) {
 if (isset($_POST['volver'])) {
     header('Location: programa.php');
 }
+if (isset($_POST['cambiarPassword'])) {
+    header('Location: cambiarPassword.php');
+}
 if (isset($_POST['guardar'])) {
     require '../core/libreriaValidacionFormularios.php';
     //Declaración de variables
@@ -120,7 +123,7 @@ if (isset($_POST['guardar'])) {
                     <input disabled type="text" name="numConUsuario" class="form-control" id="numConUsuario" aria-describedby="numConUsuario" value="<?php echo $_SESSION['numConexiónDAW205AppLogInLogOut']; ?>">
                 </div><br>
                 <div class="form-group">
-                    <label for="uConexion">Última conexión</label>
+                    <label for="uConexion">Conexión anterior</label>
                     <input disabled type="text" name="uConexion" class="form-control" id="uConexion" aria-describedby="uConexion" value="<?php echo $_SESSION['uConexiónDAW205AppLogInLogOut']; ?>">
                 </div><br>
                 <input type="submit" name="cambiarPassword" class="btn btn-secondary" value="Cambiar Password">
