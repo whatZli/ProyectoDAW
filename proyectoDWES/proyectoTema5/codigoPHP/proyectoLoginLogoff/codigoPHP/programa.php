@@ -51,7 +51,7 @@ if (isset($_POST['perfil'])) {
         </style>
     </head>
     <body >
-        <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
+        <div id="topBar">Proyecto LogIn-LogOut</div>
         <div id="content">
             <form action="<?php echo 'programa.php' ?>" method="post">
                 <input type="submit" name="salir" class="btn btn-warning" value="Cerrar Sesión">

@@ -97,7 +97,7 @@ if (isset($_POST['guardar'])) {
         </style>
     </head>
     <body >
-        <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
+        <div id="topBar">Proyecto LogIn-LogOut</div>
         <div id="content">
             <?php if ($_COOKIE['idioma'] == "cas") {
                 ?><h1>Edita tu perfil</h1>
@@ -127,9 +127,10 @@ if (isset($_POST['guardar'])) {
                     <label for="uConexion">Conexión anterior</label>
                     <input disabled type="text" name="uConexion" class="form-control" id="uConexion" aria-describedby="uConexion" value="<?php echo $_SESSION['uConexiónDAW205AppLogInLogOut']; ?>">
                 </div><br>
+                <input type="submit" name="guardar" class="btn btn-primary" value="Guardar">
                 <input type="submit" name="cambiarPassword" class="btn btn-secondary" value="Cambiar Password">
                 <input type="submit" name="volver" class="btn btn-secondary" value="Volver">
-                <input type="submit" name="guardar" class="btn btn-primary" value="Guardar">
+                
             </form>
         </div>
     </body>
