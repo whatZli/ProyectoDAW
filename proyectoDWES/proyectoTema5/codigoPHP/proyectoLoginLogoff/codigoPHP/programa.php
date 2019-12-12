@@ -33,13 +33,6 @@ if (isset($_POST['perfil'])) {
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../webroot/css/style.css"  rel="stylesheet"         type="text/css" title="Default style">
         <style>
-            .bg-custom {
-                background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
-            }
-
-            .bg-custom-1 {
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
-            }
             input{
                 float:right;
                 margin-left: 16px;
@@ -50,7 +43,7 @@ if (isset($_POST['perfil'])) {
                 width:600px;
                 margin: auto;
                 margin-top: 200px;
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
                 padding: 50px;
                 border-radius: 10px;
                 color:white;

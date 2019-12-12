@@ -48,17 +48,16 @@ if (isset($_POST['guardarClave'])) {
             }
 
             try {
-                $sql = "SELECT PASSWORD FROM `Usuario` WHERE CodUsuario = ':codUser'";
+                $sql = "SELECT PASSWORD FROM `Usuario` WHERE `CodUsuario`=':codUser'";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(":codUser", $_SESSION['usuarioDAW205AppLogInLogOut']);
                 $stmt->execute();
-
-
                 $consulta = $conn->query($sql);
 
                 $registro = $consulta->fetchObject(); //S
                 echo '<br><br>';
-                echo '<br><br>'.$registro;
+                echo $_SESSION['usuarioDAW205AppLogInLogOut'];
+                var_dump($registro);
             } catch (PDOException $exc) {
                 echo "<br><br>Error: " . $exc->getMessage();
                 echo "<br>Codigo del error: " . $exc->getCode();
@@ -103,6 +102,7 @@ if (isset($_POST['guardarClave'])) {
                 padding: 50px;
                 border-radius: 10px;
                 color:white;
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
             }
         </style>
     </head>

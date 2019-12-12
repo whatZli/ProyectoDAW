@@ -95,19 +95,12 @@ if (!isset($_COOKIE['idioma'])) {
             body{
                 box-sizing: border-box;
             }
-            .bg-custom {
-
-            }
-
-            .bg-custom-1 {
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
-            }
             #content{
                 width:600px;
                 height: 500px;
                 margin: auto;
                 margin-top: 70px;
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
                 padding: 50px;
                 border-radius: 10px;
                 color:white;
@@ -120,7 +113,7 @@ if (!isset($_COOKIE['idioma'])) {
                 display:inline-block;
                 width:49%;
                 text-align: center;
-                background: #039BE6;
+                background: #0069D9;
                 padding: 15px 20px;
                 color:white;
                 border-radius: 7px;
@@ -129,13 +122,13 @@ if (!isset($_COOKIE['idioma'])) {
                 transition: 0.3s ease;
             }
             .menu:hover{
-                background: #2F60BB;
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
             }
             .seleccionado{
                 display:inline-block;
                 width:49%;
                 text-align: center;
-                background: #2F60BB;
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
                 padding: 15px 20px;
                 color:white;
                 border-radius: 7px;
@@ -153,7 +146,6 @@ if (!isset($_COOKIE['idioma'])) {
                 position:absolute;
                 color:white;
             }
-
             .idioma{
                 margin-top: 100px;
                 display: block;
@@ -165,7 +157,7 @@ if (!isset($_COOKIE['idioma'])) {
         </style>
     </head>
     <body >
-        <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
+        <div id="topBar">Proyecto LogIn-LogOut</div>
         <nav class="idioma">
             <a href="<?php echo $_SERVER['PHP_SELF'] ?>?idioma=cas">Castellano</a>
             <a href="<?php echo $_SERVER['PHP_SELF'] ?>?idioma=eng">English</a>

@@ -85,6 +85,7 @@ if (isset($_POST['guardar'])) {
                 float:right;
             }
             #content{
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
                 width:650px;
                 height: 500px;
                 margin: auto;

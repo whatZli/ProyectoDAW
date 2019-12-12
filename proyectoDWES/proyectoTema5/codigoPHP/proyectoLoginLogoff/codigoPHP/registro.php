@@ -84,19 +84,12 @@ if (isset($_POST['registrar'])) {
             body{
                 box-sizing: border-box;
             }
-            .bg-custom {
-                background: linear-gradient(to right, #3848A2, #007bff, #039BE6, #028BCF, #3F51B5);
-            }
-
-            .bg-custom-1 {
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
-            }
             #content{
                 width:600px;
                 height: 650px;
                 margin: auto;
-                margin-top: 70px;
-                background: linear-gradient(to right,  #007bff, #039BE6, #028BCF);
+                margin-top: 120px;
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
                 padding: 50px;
                 border-radius: 10px;
                 color:white;
@@ -109,7 +102,7 @@ if (isset($_POST['registrar'])) {
                 display:inline-block;
                 width:49%;
                 text-align: center;
-                background: #039BE6;
+                background: #0069D9;
                 padding: 15px 20px;
                 color:white;
                 border-radius: 7px;
@@ -118,7 +111,7 @@ if (isset($_POST['registrar'])) {
                 transition: 0.3s ease;
             }
             .menu:hover{
-                 background: #2F60BB;
+                 background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
             }
             button{
                 width:100%;
@@ -134,7 +127,7 @@ if (isset($_POST['registrar'])) {
                 display:inline-block;
                 width:49%;
                 text-align: center;
-                background: #2F60BB;
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
                 padding: 15px 20px;
                 color:white;
                 border-radius: 7px;
@@ -145,7 +138,7 @@ if (isset($_POST['registrar'])) {
         </style>
     </head>
     <body >
-        <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
+        <div id="topBar">Proyecto LogIn-LogOut</div>
         <div id="content">
             <nav >
                 <?php
