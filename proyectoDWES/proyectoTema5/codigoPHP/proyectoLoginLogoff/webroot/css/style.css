@@ -10,11 +10,8 @@ body{
     font-family: 'Varela Round', sans-serif;
     width:90%;
     margin:auto;
-
     text-align:center;
     padding-top:3%;
-    animation: animarFondo 5s ease;
-
 }
 #logo{
     color:white;

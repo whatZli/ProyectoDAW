@@ -8,7 +8,7 @@ if (isset($_POST['volver'])) {
 }
 if (isset($_POST['guardarClave'])) {
     require '../core/libreriaValidacionFormularios.php';
-    //Declaración de variables
+//Declaración de variables
     $entradaOK = true;
 
 //Declaración del array de errores
@@ -48,16 +48,25 @@ if (isset($_POST['guardarClave'])) {
             }
 
             try {
-                $sql = "SELECT PASSWORD FROM `Usuario` WHERE `CodUsuario`=':codUser'";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam(":codUser", $_SESSION['usuarioDAW205AppLogInLogOut']);
-                $stmt->execute();
+                $usuario = $_SESSION['usuarioDAW205AppLogInLogOut'];
+                $sql = "SELECT PASSWORD FROM `Usuario` WHERE `CodUsuario`='$usuario'";
                 $consulta = $conn->query($sql);
-
-                $registro = $consulta->fetchObject(); //S
-                echo '<br><br>';
-                echo $_SESSION['usuarioDAW205AppLogInLogOut'];
-                var_dump($registro);
+                $registro = $consulta->fetchObject();
+                
+                if ($registro->PASSWORD === hash('sha256', $_SESSION['usuarioDAW205AppLogInLogOut'] . $aFormulario['passActual'])) {
+                    try {
+                        $nuevaPassword=hash('sha256', $_SESSION['usuarioDAW205AppLogInLogOut'] . $aFormulario['passNueva']);
+                        $sql2 = "UPDATE `Usuario` SET `PASSWORD` = '$nuevaPassword' WHERE `Usuario`.`CodUsuario` = '$usuario'";
+                        $stmt2 = $conn->prepare($sql2);
+                        $stmt2->execute();
+                        $aErrores['valido']="Se ha aplicado la nueva contraseña";
+                    } catch (PDOException $exc) {
+                        echo "<br><br>Error: " . $exc->getMessage();
+                        echo "<br>Codigo del error: " . $exc->getCode();
+                    }
+                } else {
+                    $aErrores['coincidencia'] = "Introduzca la password actual correctamente";
+                }
             } catch (PDOException $exc) {
                 echo "<br><br>Error: " . $exc->getMessage();
                 echo "<br>Codigo del error: " . $exc->getCode();
@@ -83,6 +92,9 @@ if (isset($_POST['guardarClave'])) {
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../webroot/css/style.css"  rel="stylesheet"         type="text/css" title="Default style">
         <style>
+            body{
+                color:white;
+            }
             input,label{
                 float:left;
             }
@@ -107,10 +119,10 @@ if (isset($_POST['guardarClave'])) {
         </style>
     </head>
     <body >
-        <div id="topBar">Proyecto Tema 5: LogIn-LogOut</div>
+        <div id="topBar">Proyecto LogIn-LogOut</div>
         <div id="content">
             <?php if ($_COOKIE['idioma'] == "cas") {
-                ?><h1>Cambiar Contraseña No funciona de momento</h1>
+                ?><h1>Cambiar Contraseña</h1>
             <?php } else if ($_COOKIE['idioma'] == "eng") { ?>
                 <h1>Change Password</h1>
             <?php } ?>
@@ -132,14 +144,22 @@ if (isset($_POST['guardarClave'])) {
                     echo '<div class="alert alert-danger" role="alert">';
                     echo 'La password actual no es válida';
                     echo '</div>';
-                } else if (isset($aErrores['coincidencia'])) {
+                } else if (isset($aErrores['passNueva']) || isset($aErrores['repPassNueva'])) {
+                    echo '<div class="alert alert-danger" role="alert">';
+                    echo 'Introduzca correctamente la nueva password';
+                    echo '</div>';
+                }else if (isset($aErrores['coincidencia'])) {
                     echo '<div class="alert alert-danger" role="alert">';
                     echo $aErrores['coincidencia'];
                     echo '</div>';
+                } else if(isset($aErrores['valido'])){
+                    echo '<div class="alert alert-success" role="alert">';
+                    echo $aErrores['valido'];
+                    echo '</div>';
                 }
                 ?>
-                <input type="submit" name="volver" class="btn btn-secondary" value="Volver">
                 <input type="submit" name="guardarClave" class="btn btn-primary" value="Guardar">
+                <input type="submit" name="volver" class="btn btn-secondary" value="Volver">
             </form>
         </div>
     </body>

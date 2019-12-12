@@ -43,8 +43,8 @@ if (isset($_POST['registrar'])) {
             $conn = new PDO("mysql:host=" . SERVER . ";dbname=" . DB, USER, PASSWD);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $exc) {
-            echo "Error: $exc->getMessage() <br>";
-            echo "Codigo del error: $exc->getCode() <br>";
+            echo "Error: " . $exc->getMessage();
+            echo "<br>Codigo del error: " . $exc->getCode();
         }
         try {
             $sql = "INSERT INTO `Usuario` (`CodUsuario`, `DescUsuario`, `Password`, `Perfil`, `FechaHoraUltimaConexion`, `NumConexiones`, `ImagenUsuario`) VALUES (:codUser, :descUser, :password, 'usuario', CURRENT_TIMESTAMP, '0', NULL)"; //Los : que van delante, es para indicar que sera una consulta preparada
@@ -111,7 +111,7 @@ if (isset($_POST['registrar'])) {
                 transition: 0.3s ease;
             }
             .menu:hover{
-                 background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
+                background: linear-gradient(to right,  hsl(211, 20%, 30%, 85%), hsl(211, 40%, 30%, 45%), hsl(211, 100%, 30% , 20%));
             }
             button{
                 width:100%;
@@ -142,49 +142,49 @@ if (isset($_POST['registrar'])) {
         <div id="content">
             <nav >
                 <?php
-                if($_COOKIE['idioma']==="cas"){
+                if ($_COOKIE['idioma'] === "cas") {
                     echo '<a href="login.php" class="menu" >Iniciar Sesión<a>';
                     echo '<a href="#" class="seleccionado">Registro<a>';
-                }else{
+                } else {
                     echo '<a href="login.php" class="menu">Log In<a>';
                     echo '<a href="#" class="seleccionado">Sign In<a>';
                 }
-                
                 ?>
                 <article id="a2">
                     <form name="registro" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="form-group">
                             <label for="codUser">Código de usuario</label>
-                            <input type="text" name="codUser" class="form-control" id="codUser" aria-describedby="codUser" placeholder="Introduce código de usuario" value="<?php 
-                            if(isset($_POST['registrar']) &&!isset($aErrores['codUserDuplicado']) && !isset($aErrores['codUser'])){
-                                echo $_POST['codUser'];
-                            }
-                            ?>">
-                            <?php
-                            if (isset($aErrores['codUserDuplicado'])) {
-                                echo '<div class="alert alert-danger" role="alert">';
-                                echo 'Ya existe el usuario '.$_POST['codUser']; 
-                                echo '</div>';
-                            }else if (isset($aErrores['codUser'])) {
-                                echo '<div class="alert alert-danger" role="alert">';
-                                echo 'Introduce un código válido'; 
-                                echo '</div>';
-                            }
-                            ?>
+                            <input type="text" name="codUser" class="form-control" id="codUser" aria-describedby="codUser" placeholder="Introduce código de usuario" value="<?php
+                if (isset($_POST['registrar']) && !isset($aErrores['codUserDuplicado']) && !isset($aErrores['codUser'])) {
+                    echo $_POST['codUser'];
+                }
+                ?>">
+                                   <?php
+                                   if (isset($aErrores['codUserDuplicado'])) {
+                                       echo '<div class="alert alert-danger" role="alert">';
+                                       echo 'Ya existe el usuario ' . $_POST['codUser'];
+                                       echo '</div>';
+                                   } else if (isset($aErrores['codUser'])) {
+                                       echo '<div class="alert alert-danger" role="alert">';
+                                       echo 'Introduce un código válido';
+                                       echo '</div>';
+                                   }
+                                   ?>
                         </div>
                         <div class="form-group">
                             <label for="descUser">Descripción</label>
-                            <input type="text" name="descUser" class="form-control" id="descUser" aria-describedby="descUser" placeholder="Introduce descripción del usuario" value="<?php 
-                            if(isset($_POST['registrar']) && !isset($aErrores['descUser']) && !isset($aErrores['codUserDuplicado'])){
-                                echo $_POST['descUser'];
-                            }?>">
-                            <?php
-                            if (isset($aErrores['descUser'])) {
-                                echo '<div class="alert alert-danger" role="alert">';
-                                echo 'Introduce una descripción válida'; 
-                                echo '</div>';
-                            }
-                            ?>
+                            <input type="text" name="descUser" class="form-control" id="descUser" aria-describedby="descUser" placeholder="Introduce descripción del usuario" value="<?php
+                                   if (isset($_POST['registrar']) && !isset($aErrores['descUser']) && !isset($aErrores['codUserDuplicado'])) {
+                                       echo $_POST['descUser'];
+                                   }
+                                   ?>">
+                                   <?php
+                                   if (isset($aErrores['descUser'])) {
+                                       echo '<div class="alert alert-danger" role="alert">';
+                                       echo 'Introduce una descripción válida';
+                                       echo '</div>';
+                                   }
+                                   ?>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Contraseña</label>
@@ -192,7 +192,7 @@ if (isset($_POST['registrar'])) {
                             <?php
                             if (isset($aErrores['password'])) {
                                 echo '<div class="alert alert-danger" role="alert">';
-                                echo 'Introduce una contraseña válida'; 
+                                echo 'Introduce una contraseña válida';
                                 echo '</div>';
                             }
                             ?>
