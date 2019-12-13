@@ -17,7 +17,7 @@
             body{
                 width: 100%;
                 height: 100vh;
-                background-image: radial-gradient( circle farthest-corner at -8.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgba(255,163,77,1) 24.4%, rgba(19,30,37,1) 24.5%, rgba(19,30,37,1) 66% );
+                background-image: radial-gradient( circle farthest-corner at 95.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,0.6) 15.9%, rgba(255,163,77,0.6) 15.9%, rgba(255,163,77,1) 24.4%, rgba(70,30,19,1)40.5%, rgba(19,30,37,1) 66% );
             }
             header{
                 background-color:#e5e5e5;
