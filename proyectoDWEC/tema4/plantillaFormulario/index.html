@@ -8,9 +8,11 @@
         <link rel="shortcut icon" type="image/png" href="../../../../core/images/favicon.png"/>
         <title>Alex Dominguez</title>
         <link href="../webroot/css/style.css"  rel="stylesheet" type="text/css" title="Default style">
+        <script type="text/javascript" src="js/libreriaValidacion.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
         <style>
             form{
-                width: 50%;
+                width: 290px;
                 margin: auto;
             }
             input{
@@ -23,9 +25,9 @@
                 width: 100px;
             }
         </style>
-        <script type="text/javascript" src="js.js"></script>
+        
     </head>
-    <body onload="inicio()">
+    <body>
         <div id="logo">
             <a href="../../../"><h1>DAW</h1></a>
         </div>
@@ -44,56 +46,55 @@
         </div>
 
         <div class="content" >
-            <form name="form" onsubmit="return valida()">
+            <form action="ejercicio.html" method="get" accept-charset="UTF-8" name="form" id="form" enctype="application/x-www-form-urlencoded" onsubmit="return validar()">
                 <fieldset>
-                    <legend>Plantilla de validación de formularios</legend>
-                    <label>Valores alfabéticos</label>
-                    <input type="text" name="tAlphabetic" id="tAlphabetic" placeholder="abcde"><br>
-                    <label>Valores alfanuméricos</label>
-                    <input type="text" name="tAlphanumeric" id="tAlphanumeric" placeholder="1234abcd"><br>
-                    <label>Valores numéricos enteros</label>
-                    <input type="text" name="tNumericInt" id="tNumericInt" placeholder="1234"><br>
-                    <label>Valores numéricos reales</label>
-                    <input type="text" name="tNumericFloat" id="tNumericFloat" placeholder="1234.45"><br>
-                    <label>Área de texto</label>
-                    <textarea rows="2" cols="30" name="taTextArea" id="taTextArea"></textarea><br>
-                    <label>Lista deplegable</label>
-                    <select name="sList" id="sLista">
-                        <option value="opcion1">Opcion 1</option>
-                        <option value="opcion2">Opcion 2</option>
-                        <option value="opcion3">Opcion 3</option>
-                    </select><br>
-                    <label>Fecha</label>
-                    <input type="date" name="dDate" id="dDate" value=""><br>
-                    <label>Color</label>
-                    <input type="color" name="cColor" id="cColor" value="#c3ec3e"><br>
-                    <label>Rango de valores</label>
-                    <input id="rango" list="milista" type="range" name="rango" min="0" max="100">
-                    <datalist id="milista">
-                        <option value="0">0</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="75">75</option>
-                        <option value="100">100</option>
-                    </datalist><br>
-                    <label>Valores de tipo Radio</label>
-                    <input type="radio" id="rbRadio1" name="rbRadio" value="rbRadio1" checked>
-                    <label for="rbRadio1" >Opcion 1</label>
-                    <input type="radio" id="rbRadio2" name="rbRadio" value="rbRadio2">
-                    <label for="rbRadio2">Opcion 2</label>
-                    <input type="radio" id="rbRadio3" name="rbRadio" value="rbRadio3">
-                    <label for="rbRadio3">Opcion 3</label><br>
-                    <label>Valores de tipo CheckBox</label>
-                    <input type="checkbox" id="cbCheckBox1" name="cbCheckBox1[opcion1]" value="cbCheckBox1">
-                    <label for="cbCheckBox1">Opcion 1</label>
-                    <input type="checkbox" id="cbCheckBox2" name="cbCheckBox2[opcion2]" value="cbCheckBox2">
-                    <label for="cbCheckBox2">Opcion 2</label>
-                    <input type="checkbox" id="cbCheckBox3" name="cbCheckBox3[opcion3]" value="cbCheckBox3">
-                    <label for="cbCheckBox3">Opcion 3</label><br>
-
-                    <input type="submit" name="enviar" value="Enviar">
+                    <legend>Datos personales: </legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nompre" id="nombre" placeholder="Introduce nombre">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Introduce apellidos">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email" placeholder="Introduce Email">                    
+                    <br>
+                    <label>Género</label>
+                    <input type="radio" name="genero" id="hombre" value="Hombre">
+                    <label for="hombre">Hombre</label>
+                    <input type="radio" name="genero" id="mujer" value="Mujer">
+                    <label for="mujer">Mujer</label>
+                    <input type="radio" name="genero" id="otro" value="Otro">
+                    <label for="otro">Otro</label>
+                    <br>
+                    <label>Aficiones:</label>
+                    <br>
+                    <input type="checkbox" name="aficion[viajes]" id="viajes" value="viajes">
+                    <label for="viajes">Viajes</label>
+                    <input type="checkbox" name="aficion[deportes]" id="deportes" value="deportes">
+                    <label for="deportes">Deportes</label>
+                    <br>
+                    <input type="checkbox" name="aficion[cine]" id="cine" value="cine">
+                    <label for="cine">Cine</label>
+                    <input type="checkbox" name="aficion[libros]" id="libros" value="libros">
+                    <label for="libros">Libros</label>
+                    <br>
+                    <input type="checkbox" name="aficion[musica]" id="musica" value="musica">
+                    <label for="musica">Música</label>
+                    <input type="checkbox" name="aficion[automoviles]" id="automoviles" value="automoviles">
+                    <label for="automoviles">Automóviles</label>
+                    <br>
+                    <input type="checkbox" name="aficion[videojuegos]" id="videojuegos" value="videojuegos">
+                    <label for="videojuegos">Videojuegos</label>
+                    <input type="checkbox" name="aficion[gastronomia]" id="gastronomia" value="gastronomia">
+                    <label for="gastronomia">Gastronomía</label>
+                    <br>
+                    <input type="checkbox" name="aficion[belleza]" id="belleza" value="belleza">
+                    <label for="belleza">Belleza</label>
+                    <input type="checkbox" name="aficion[tecnologia]" id="tecnologia" value="tecnologia">
+                    <label for="tecnologia">Tecnología</label>
+                    <br>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Borrar">
                 </fieldset>
-            </form>   
+            </form>
         </div>
         <a href="../">
             <div id="atras">

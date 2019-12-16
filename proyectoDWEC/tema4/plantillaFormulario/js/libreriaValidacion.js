@@ -1,17 +1,12 @@
-function validaAlphabetic(textoValidar, min, max, obligatorio) {
-    var exp = /^[A-z]{min,max}$/;
-    if (obligatorio) {
-        if (!comprobarVacio(textoValidar)) {
-            return false;
-        }
-    }
-    if (!exp.test(textoValidar)) {
-        return false;
-    } else {
+function validaAlphabetic(textoValidar) {
+    textoValidar = textoValidar.trim();
+    var exp = /^[\D]+$/;
+    if (exp.test(textoValidar) && textoValidar !== "") {
         return true;
     }
+    return false;
 }
-function validaAlphaNumeric(textoValidar, min, max, obligatorio) {
+function validaAlphaNumeric(textoValidar, min, max) {
     /*Validación del campo de texto*/
     exp = /^[A-z0-9]{min,max}$/;
     if (!exp.test(document.getElementById(textoValidar).value)) {
@@ -91,23 +86,14 @@ function validaPassword(password) {
 function validaDate(date) {
 
 }
-function validaEmail() {
-    exp = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    if (!exp.test(document.getElementById("email").value)) {
-        document.getElementById("email").style.borderColor = "red";
-        return false;
-    } else {
-        document.getElementById("email").style.borderColor = "green";
-    }
-}
 function validaRadioButton(elementoID) {
-	if(document.formulario.elements[elementoID].selected){
+    if (document.formulario.elements[elementoID].selected) {
         return true;
     }
     return false;
 }
 function validaCheckBox(elementoID, numSeleccionados) {
-if(document.formulario.elements[nombre.length] >= numSeleccionados){
+    if (elementoID.length >= numSeleccionados) {
         return true;
     }
     return false;
@@ -115,7 +101,7 @@ if(document.formulario.elements[nombre.length] >= numSeleccionados){
 function validaSelect() {}
 function validaEmail(email) {
     exp = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    if (exp.test(email)) {
+    if (!exp.test(email) || email === "") {
         return false;
     } else {
         return true;
